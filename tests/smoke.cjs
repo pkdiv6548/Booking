@@ -282,7 +282,7 @@ const pages = [
       const dates = await page.evaluate(() => {
         const d = new Date(); d.setDate(d.getDate() + 10);
         const later = d.toISOString().slice(0, 10);
-        d.setDate(d.getDate() + 5);
+        d.setDate(d.getDate() - 5);
         return { later, earlier: d.toISOString().slice(0, 10) };
       });
       await page.locator("#from").fill("Delhi");
