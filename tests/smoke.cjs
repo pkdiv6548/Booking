@@ -276,6 +276,64 @@ const pages = [
       failures.push("Car rental demo funnel check: " + error.message);
     }
 
+    // Negative-path validation: prevent invalid routes/dates and malformed refund requests.
+    try {
+      await page.goto("http://127.0.0.1:4173/flights.html", { waitUntil: "domcontentloaded" });
+      const dates = await page.evaluate(() => {
+        const d = new Date(); d.setDate(d.getDate() + 10);
+        const later = d.toISOString().slice(0, 10);
+        d.setDate(d.getDate() + 5);
+        return { later, earlier: d.toISOString().slice(0, 10) };
+      });
+      await page.locator("#from").fill("Delhi");
+      await page.locator("#to").fill("Delhi");
+      await page.locator("#depart").fill(dates.later);
+      await page.locator("#return").fill(dates.later);
+      await page.locator('[data-flight-search] button[type="submit"]').click();
+      if (!page.url().endsWith("/flights.html") || !(await page.locator("#toast").innerText()).includes("Origin and destination must be different")) {
+        failures.push("Validation: identical flight origin and destination were not rejected");
+      }
+      await page.locator("#to").fill("Mumbai");
+      await page.locator("#return").fill(dates.earlier);
+      await page.locator('[data-flight-search] button[type="submit"]').click();
+      if (!page.url().endsWith("/flights.html") || !(await page.locator("#toast").innerText()).includes("Return date must be on or after departure")) {
+        failures.push("Validation: return date before departure was not rejected");
+      }
+
+      await page.goto("http://127.0.0.1:4173/cars.html", { waitUntil: "domcontentloaded" });
+      const carDates = await page.evaluate(() => {
+        const d = new Date(); d.setDate(d.getDate() + 10);
+        const pickup = d.toISOString().slice(0, 10);
+        d.setDate(d.getDate() - 1);
+        return { pickup, dropoff: d.toISOString().slice(0, 10) };
+      });
+      await page.locator("#pickup").fill("Delhi");
+      await page.locator("#dropoff").fill("Delhi");
+      await page.locator("#pickup-date").fill(carDates.pickup);
+      await page.locator("#dropoff-date").fill(carDates.dropoff);
+      await page.locator('[data-car-search] button[type="submit"]').click();
+      if (!page.url().endsWith("/cars.html") || !(await page.locator("#toast").innerText()).includes("Return date must be after pick-up date")) {
+        failures.push("Validation: car drop-off before pick-up was not rejected");
+      }
+
+      await page.goto("http://127.0.0.1:4173/refunds.html", { waitUntil: "domcontentloaded" });
+      await page.evaluate(() => localStorage.removeItem("tripnest-refunds"));
+      await page.locator("#refund-booking-id").fill("!!");
+      await page.locator("#refund-reason").selectOption("Other");
+      await page.locator("#refund-details").fill("This is a sufficiently long test refund reason.");
+      await page.locator('#refund-form button[type="submit"]').click();
+      let refundRows = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-refunds") || "[]"));
+      if (refundRows.length !== 0) failures.push("Validation: malformed refund booking ID was stored");
+      await page.locator("#refund-booking-id").fill("TNP-TEST-1234");
+      await page.locator('#refund-form button[type="submit"]').click();
+      refundRows = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-refunds") || "[]"));
+      if (refundRows.length !== 1 || refundRows[0].bookingId !== "TNP-TEST-1234" || refundRows[0].status !== "Under review (demo)") {
+        failures.push("Refund request: valid demo request was not persisted with the expected status");
+      }
+    } catch (error) {
+      failures.push("Negative-path validation check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
