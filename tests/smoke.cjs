@@ -151,6 +151,41 @@ const pages = [
       failures.push("Functional interaction check: " + error.message);
     }
 
+    // End-to-end demo hotel booking funnel; all state remains browser-local.
+    try {
+      await page.evaluate(() => {
+        localStorage.removeItem("tripnest-bookings");
+        localStorage.removeItem("tripnest-last-booking");
+        localStorage.removeItem("tripnest-selected-property");
+        localStorage.removeItem("tripnest-room");
+      });
+      await page.goto("http://127.0.0.1:4173/property.html", { waitUntil: "domcontentloaded" });
+      await page.locator("#rooms").click();
+      await page.locator('[data-select-room="Deluxe Room"]').click();
+      if (!page.url().endsWith("/guest-details.html")) {
+        failures.push("Booking funnel: room selection did not open guest details");
+      }
+      await page.locator("#first").fill("Test");
+      await page.locator("#last").fill("Guest");
+      await page.locator("#email").fill("test.guest@example.com");
+      await page.locator("#phone").fill("9876543210");
+      await page.locator("[data-continue-payment]").click();
+      if (!page.url().endsWith("/payment.html")) {
+        failures.push("Booking funnel: valid guest details did not open payment");
+      }
+      await page.locator("#agree-terms").check();
+      await page.locator("[data-pay-demo]").click();
+      if (!page.url().endsWith("/confirmation.html")) {
+        failures.push("Booking funnel: demo confirmation did not open confirmation page");
+      }
+      const booking = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-last-booking") || "null"));
+      if (!booking || booking.status !== "Confirmed" || booking.room !== "Deluxe Room") {
+        failures.push("Booking funnel: confirmed demo booking was not persisted correctly");
+      }
+    } catch (error) {
+      failures.push("Hotel booking funnel check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
