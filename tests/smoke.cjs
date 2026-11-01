@@ -186,6 +186,96 @@ const pages = [
       failures.push("Hotel booking funnel check: " + error.message);
     }
 
+    // End-to-end demo flight funnel: search -> traveller -> simulated payment -> confirmation.
+    try {
+      await page.evaluate(() => {
+        ["tripnest-flight-search", "tripnest-selected-flight", "tripnest-flight-passenger", "tripnest-flight-booking"]
+          .forEach(key => localStorage.removeItem(key));
+      });
+      await page.goto("http://127.0.0.1:4173/flights.html", { waitUntil: "domcontentloaded" });
+      const flightDates = await page.evaluate(() => {
+        const d = new Date(); d.setDate(d.getDate() + 7);
+        const depart = d.toISOString().slice(0, 10);
+        d.setDate(d.getDate() + 4);
+        return { depart, ret: d.toISOString().slice(0, 10) };
+      });
+      await page.locator("#from").fill("Delhi");
+      await page.locator("#to").fill("Mumbai");
+      await page.locator("#depart").fill(flightDates.depart);
+      await page.locator("#return").fill(flightDates.ret);
+      await page.locator('[data-flight-search] button[type="submit"]').click();
+      if (!page.url().includes("/flight-results.html?")) failures.push("Flight funnel: valid search did not open results");
+      await page.locator('a[href^="flight-passengers.html"]').first().click();
+      await page.locator("#first-name").fill("Test");
+      await page.locator("#last-name").fill("Traveller");
+      await page.locator("#dob").fill("1990-01-01");
+      await page.locator("#gender").selectOption("Other");
+      await page.locator("#traveller-email").fill("flight.test@example.com");
+      await page.locator("#traveller-phone").fill("9876543210");
+      await page.locator('[data-flight-passenger-form]').locator('button[type="submit"]').click();
+      if (!page.url().endsWith("/flight-payment.html")) failures.push("Flight funnel: valid traveller details did not open payment");
+      await page.locator("#flight-payment-form").locator('button[type="submit"]').click();
+      await page.locator("#flight-payment-success-modal").waitFor({ state: "visible", timeout: 5000 }).catch(() => {});
+      if (!(await page.locator("#flight-payment-success-modal").evaluate(el => el.classList.contains("open")))) {
+        failures.push("Flight funnel: simulated payment did not show success dialog");
+      } else {
+        await page.locator('#flight-payment-success-modal a[href="flight-confirmation.html"]').click();
+        const booking = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-flight-booking") || "null"));
+        if (!page.url().endsWith("/flight-confirmation.html") || !booking || booking.status !== "Demo confirmed" || booking.from !== "Delhi" || booking.to !== "Mumbai") {
+          failures.push("Flight funnel: demo booking was not persisted or confirmation did not open");
+        }
+      }
+    } catch (error) {
+      failures.push("Flight demo funnel check: " + error.message);
+    }
+
+    // End-to-end demo car rental funnel, including licence-date validation and confirmation.
+    try {
+      await page.evaluate(() => {
+        ["tripnest-car-search", "tripnest-selected-car", "tripnest-car-driver", "tripnest-car-booking",
+          "tripnest-car-insurance", "tripnest-car-insurance-price"].forEach(key => localStorage.removeItem(key));
+      });
+      await page.goto("http://127.0.0.1:4173/cars.html", { waitUntil: "domcontentloaded" });
+      const carDates = await page.evaluate(() => {
+        const d = new Date(); d.setDate(d.getDate() + 14);
+        const pickup = d.toISOString().slice(0, 10);
+        d.setDate(d.getDate() + 3);
+        return { pickup, dropoff: d.toISOString().slice(0, 10), license: new Date(Date.now() + 31536000000).toISOString().slice(0, 10) };
+      });
+      await page.locator("#pickup").fill("Delhi");
+      await page.locator("#dropoff").fill("Delhi");
+      await page.locator("#pickup-date").fill(carDates.pickup);
+      await page.locator("#dropoff-date").fill(carDates.dropoff);
+      await page.locator('[data-car-search] button[type="submit"]').click();
+      if (!page.url().includes("/car-results.html?")) failures.push("Car funnel: valid search did not open results");
+      await page.locator("[data-select-car]").first().click();
+      if (!page.url().endsWith("/car-driver.html")) failures.push("Car funnel: selecting a car did not open driver details");
+      await page.locator("#car-first").fill("Test");
+      await page.locator("#car-last").fill("Driver");
+      await page.locator("#car-dob").fill("1990-01-01");
+      await page.locator("#car-phone").fill("9876543210");
+      await page.locator("#car-email").fill("car.test@example.com");
+      await page.locator("#car-license").fill("DL12345678");
+      await page.locator("#license-valid").fill(carDates.license);
+      await page.locator("#car-driver-form button[type='submit']").click();
+      if (!page.url().endsWith("/car-payment.html")) failures.push("Car funnel: valid driver details did not open payment");
+      await page.locator("#car-terms").check();
+      await page.locator("#car-payment-form button[type='submit']").click();
+      await page.locator("#car-payment-success-modal").waitFor({ state: "visible", timeout: 5000 }).catch(() => {});
+      if (!(await page.locator("#car-payment-success-modal").evaluate(el => el.classList.contains("open")))) {
+        failures.push("Car funnel: simulated payment did not show success dialog");
+      } else {
+        await page.locator("#car-payment-view-confirmation").click();
+        await page.waitForURL("**/car-confirmation.html", { timeout: 5000 }).catch(() => {});
+        const booking = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-car-booking") || "null"));
+        if (!page.url().endsWith("/car-confirmation.html") || !booking || booking.status !== "Demo confirmed" || booking.car !== "Hyundai Creta or Similar" || booking.driver !== "Test Driver") {
+          failures.push("Car funnel: demo rental booking was not persisted or confirmation did not open");
+        }
+      }
+    } catch (error) {
+      failures.push("Car rental demo funnel check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
