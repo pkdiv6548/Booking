@@ -90,17 +90,21 @@ This is a working list of discovered files, not a claim that every image in ever
 - `TripNest Booking Management Dashboard.png`
 - `TRIPNEST Booking Flow UI Montage.png`
 - `TRIPNEST Booking Journey UI Collage.png`
+- `TRIPNEST Hotel Booking Journey UI Collage.png` — confirmation and cancellation confirmation popup
+- `TRIPNEST Guests & Rooms Flow.png` — child ages and room-count states
+- `TripNest Booking Management Dashboard.png` — booking details, cancellation policy, cancellation success/refund states
 
 **Flights**
 - `TRIPNEST Flight Booking UI Storyboard.png`
 - `TRIPNEST Flight Booking Flow Mockup.png`
 - `TripNest Flight Booking Payment Journey.png`
 - `TRIPNEST Flight Booking Journey.png`
+- `TripNest Flight Booking Payment Journey.png` — passenger validation, payment processing, failed/success states, ticket download and manage-booking actions
 
 **Cars**
 - `TRIPNEST Car Rental Booking Flow.png`
 - `TRIPNEST Car Rental Booking Storyboard.png`
-- `TRIPNEST Car Rental Booking Flow(1).png`
+- `TRIPNEST Car Rental Booking Flow(1).png` — payment processing, failure/retry, successful payment and voucher download states
 
 **Offers, alerts, loyalty and support**
 - `TRIPNEST Travel Offers UI Showcase.png`
@@ -109,6 +113,7 @@ This is a working list of discovered files, not a claim that every image in ever
 - `TRIPNEST Support Centre UI Montage.png`
 - `TRIPNEST Refund Management UI Collage.png`
 - `TRIPNEST Membership Rewards Dashboard Collage.png`
+- `TRIPNEST Support and Privacy UI Collage.png` — contact support, live chat, cookie consent/preferences and accessibility settings
 
 ### How to apply references
 1. Keep the TRIPNEST brand mark/logo consistent across every page and popup, even if a reference image has small rendering differences.
