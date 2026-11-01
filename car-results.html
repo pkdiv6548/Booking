@@ -29,7 +29,7 @@ document.querySelectorAll("[data-open='car-price-modal']").forEach(button=>butto
  const row=button.closest(".property-row"),select=row?.querySelector("[data-select-car]");
  if(!select||!breakdown||breakdown.length<4)return;
  const total=Number(select.dataset.carPrice||0);
- const rental=Math.round(total/1.12),fees=total-rental;
+ const rental=Math.round(total*13497/15117),fees=total-rental;
  breakdown[0].querySelector("span").textContent="Rental subtotal · "+rentalDays+" day"+(rentalDays===1?"":"s");
  breakdown[0].querySelector("strong").textContent=money(rental);
  breakdown[1].querySelector("strong").textContent=money(fees);
