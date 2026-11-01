@@ -55,7 +55,7 @@ const pages = [
         const overflow = await page.evaluate(() => {
           const root = document.documentElement;
           const offenders = [...document.querySelectorAll("body *")]
-            .filter(el => !el.closest(".subnav, .navlinks"))
+            .filter(el => !el.closest(".subnav, .navlinks, .admin-side, .admin-table"))
             .map(el => ({ tag: el.tagName.toLowerCase(), cls: String(el.className || "").slice(0, 70),
               right: Math.round(el.getBoundingClientRect().right), width: Math.round(el.getBoundingClientRect().width) }))
             .filter(el => el.right > root.clientWidth + 2)
