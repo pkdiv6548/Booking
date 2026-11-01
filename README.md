@@ -59,8 +59,8 @@ The user reports that the separate **“Bookingcom Hompage Research”** convers
 Re-check the Library each time work continues and use the newest available references to guide the relevant page. Images generated in a separate conversation do not automatically sync into this repository; only use image files that are actually available.
 
 ## Verification notes
-- Static cross-page audit checked 38 expected HTML routes in batches; all listed pages were retrievable from the repository.
-- HTML `href` and `action` targets in the audited batches did not point to unexpected `.html` filenames.
+- Static cross-page audit checked all 39 expected HTML routes in batches; all listed pages were retrievable from the repository.
+- HTML `href` and `action` targets in the audited batches did not point to unexpected `.html` filenames. All audited pages include a viewport meta tag, shared stylesheet, and TRIPNEST branding; pages without `assets/app.js` use inline scripts for their standalone interactions.
 - Shared CSS contains responsive breakpoints at 950px and 640px.
 - `assets/app.js` was previously syntax-checked. Static checks do not replace real browser smoke tests, mobile/responsive testing, or full end-to-end flow validation.
 
