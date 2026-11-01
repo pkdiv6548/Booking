@@ -101,6 +101,56 @@ const pages = [
       failures.push("Navigation/modal interaction check: " + error.message);
     }
 
+    // Functional checks: wishlist persistence, admin table search, cookie preferences.
+    try {
+      await page.goto("http://127.0.0.1:4173/stays.html", { waitUntil: "domcontentloaded" });
+      await page.evaluate(() => {
+        localStorage.removeItem("tripnest-favorites");
+        localStorage.removeItem("tripnest-cookies");
+        localStorage.removeItem("tripnest-cookie-preferences");
+        sessionStorage.removeItem("tripnest-cookie-dismissed");
+      });
+      await page.reload({ waitUntil: "domcontentloaded" });
+      const favorite = page.locator("[data-favorite]").first();
+      const favoriteName = await favorite.getAttribute("data-favorite");
+      await favorite.click();
+      const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-favorites") || "[]"));
+      if (!saved.includes(favoriteName)) failures.push("Wishlist: saved property was not persisted in localStorage");
+      await page.goto("http://127.0.0.1:4173/wishlist.html", { waitUntil: "domcontentloaded" });
+      if (!(await page.locator("#wishlist-list").innerText()).includes(favoriteName)) {
+        failures.push("Wishlist: saved property was not shown on wishlist page");
+      }
+
+      await page.goto("http://127.0.0.1:4173/admin-users.html", { waitUntil: "domcontentloaded" });
+      await page.locator("[data-table-search]").fill("Priya Sharma");
+      if (await page.locator('[data-search-row]:visible').count() !== 1) {
+        failures.push("Admin user search: expected exactly one matching row for Priya Sharma");
+      }
+      await page.locator("[data-table-search]").fill("no-such-user-xyz");
+      if (await page.locator('[data-search-row]:visible').count() !== 0) {
+        failures.push("Admin user search: unmatched rows were not filtered out");
+      }
+
+      await page.goto("http://127.0.0.1:4173/index.html", { waitUntil: "domcontentloaded" });
+      await page.evaluate(() => {
+        localStorage.removeItem("tripnest-cookies");
+        localStorage.removeItem("tripnest-cookie-preferences");
+        sessionStorage.removeItem("tripnest-cookie-dismissed");
+      });
+      await page.reload({ waitUntil: "domcontentloaded" });
+      await page.locator('[data-cookie-action="reject"]').click({ timeout: 5000 });
+      const cookiePrefs = await page.evaluate(() => ({
+        state: localStorage.getItem("tripnest-cookies"),
+        prefs: JSON.parse(localStorage.getItem("tripnest-cookie-preferences") || "{}"),
+        closed: !document.querySelector("#cookie-modal").classList.contains("open")
+      }));
+      if (cookiePrefs.state !== "rejected-non-essential" || cookiePrefs.prefs.marketing !== false || !cookiePrefs.closed) {
+        failures.push("Cookie preferences: reject non-essential choice did not persist correctly");
+      }
+    } catch (error) {
+      failures.push("Functional interaction check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
