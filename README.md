@@ -100,16 +100,15 @@ This is a working list of discovered files, not a claim that every image in ever
 - `TripNest Flight Booking Payment Journey.png`
 - `TRIPNEST Flight Booking Journey.png`
 - `TripNest Flight Booking Payment Journey.png` — passenger validation, payment processing, failed/success states, ticket download and manage-booking actions
+- `TRIPNEST Payment Gateway Flow Mockup.png` — payment method selection, terms validation, loading, success, failure and timeout/retry dialogs
 
 **Cars**
 - `TRIPNEST Car Rental Booking Flow.png`
 - `TRIPNEST Car Rental Booking Storyboard.png`
 - `TRIPNEST Car Rental Booking Flow(1).png` — payment processing, failure/retry, successful payment and voucher download states
+
+**Offers, alerts, loyalty and support**
 - `TRIPNEST Hotel Booking Journey UI Collage.png` — property details, photo-gallery popup, amenities and booking detail states
-
-**Offers, alerts, loyalty and support**
-
-**Offers, alerts, loyalty and support**
 - `TRIPNEST Booking and Refund Flow.png` — My Trips, modify/cancel booking, cancellation success and refund status
 - `TRIPNEST Refund Management UI Collage.png` — refund eligibility, policy popup, fee breakdown and estimated refund
 - `TRIPNEST Travel Offers UI Showcase.png`
