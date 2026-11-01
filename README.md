@@ -64,5 +64,61 @@ Re-check the Library each time work continues and use the newest available refer
 - Shared CSS contains responsive breakpoints at 950px and 640px.
 - `assets/app.js` was previously syntax-checked. Static checks do not replace real browser smoke tests, mobile/responsive testing, or full end-to-end flow validation.
 
+
+
+## Reference-first implementation policy (updated 1 Nov 2026)
+
+The user has identified the separate conversation **“Bookingcom Hompage Research”** and reports that it contains generated references through **Prototype 41 — TRIPNEST Car Rental Booking**. Treat *all relevant TRIPNEST images visible in the Library* as design references, not only the newest car-rental collage. The reference scope includes individual pages, all steps/states of each journey, dialogs/modals, dropdowns, calendars, validation errors, warning/success/error alerts, confirmation states, notification panels, empty/loading states, and print/voucher views.
+
+### Reference catalogue currently discovered in the Library
+This is a working list of discovered files, not a claim that every image in every conversation has been enumerated. Search the Library again on every continuation and extend the list when new matching images are available.
+
+**Global booking and shared UI**
+- `TRIPNEST Booking Journey UI Collage.png`
+- `TRIPNEST Booking Flow UI Collage.png`
+- `TRIPNEST Booking Flow UI Montage.png`
+- `TRIPNEST UI Reference Collage.png`
+- `TRIPNEST UI Reference Infographic.png`
+- `TRIPNEST Travel Booking UI Screens.png`
+- `Tripnest Travel Booking Flow UI Grid.png`
+- `TRIPNEST Complete UX Flowboard.png`
+
+**Stays, property, room, guest and booking states**
+- `TRIPNEST Hotel Booking UI Flow Montage.png`
+- `TRIPNEST Hotel Booking Journey Storyboard.png`
+- `TRIPNEST Guests & Rooms Flow.png`
+- `TripNest Booking Management Dashboard.png`
+- `TRIPNEST Booking Flow UI Montage.png`
+- `TRIPNEST Booking Journey UI Collage.png`
+
+**Flights**
+- `TRIPNEST Flight Booking UI Storyboard.png`
+- `TRIPNEST Flight Booking Flow Mockup.png`
+- `TripNest Flight Booking Payment Journey.png`
+- `TRIPNEST Flight Booking Journey.png`
+
+**Cars**
+- `TRIPNEST Car Rental Booking Flow.png`
+- `TRIPNEST Car Rental Booking Storyboard.png`
+- `TRIPNEST Car Rental Booking Flow(1).png`
+
+**Offers, alerts, loyalty and support**
+- `TRIPNEST Travel Offers UI Showcase.png`
+- `TRIPNEST Saved Searches UI Grid.png`
+- `TRIPNEST Saved Searches & Price Alerts UI Grid.png`
+- `TRIPNEST Support Centre UI Montage.png`
+- `TRIPNEST Refund Management UI Collage.png`
+- `TRIPNEST Membership Rewards Dashboard Collage.png`
+
+### How to apply references
+1. Keep the TRIPNEST brand mark/logo consistent across every page and popup, even if a reference image has small rendering differences.
+2. Use the matching reference panel for each individual page; do not implement a whole collage as one page.
+3. Recreate each relevant interaction/state separately: open/closed popups, dropdown choices, date/guest selectors, inline validation, loading, success/error/warning alerts, confirmation, cancellation/refund status, and empty states.
+4. Maintain a coherent design system across the site: navy header, blue primary actions, white/light surfaces, readable contrast, consistent typography and spacing. Use red for errors, amber/yellow for warnings, green for success/refund-complete states, and preserve any distinct reference-specific theme where it represents a real state or section.
+5. Ensure each reference-driven page works at desktop and mobile sizes, with accessible labels, keyboard-operable controls, visible focus states, and useful feedback after actions.
+6. Treat reference artwork as visual/product guidance, not proof that a real backend operation exists. Keep demo-only payments, booking, alerts and refunds clearly labelled unless a real integration is deliberately added.
+7. Because references are generated in a separate chat, they are not automatically synchronized to GitHub. Re-search the Library each time this project is continued and use the newest available matching references.
+
+
 ## Prototype scope and limitations
 Search, filters, saved items, modals, and demo booking steps may run in the browser. Listings and prices are sample data, and some state is stored in `localStorage`. No real inventory is queried, and no real reservations, payments, refunds, or external notifications are processed. Do not enter real payment credentials. This is an independent prototype and is not affiliated with Booking.com.
