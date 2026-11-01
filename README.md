@@ -105,8 +105,13 @@ This is a working list of discovered files, not a claim that every image in ever
 - `TRIPNEST Car Rental Booking Flow.png`
 - `TRIPNEST Car Rental Booking Storyboard.png`
 - `TRIPNEST Car Rental Booking Flow(1).png` — payment processing, failure/retry, successful payment and voucher download states
+- `TRIPNEST Hotel Booking Journey UI Collage.png` — property details, photo-gallery popup, amenities and booking detail states
 
 **Offers, alerts, loyalty and support**
+
+**Offers, alerts, loyalty and support**
+- `TRIPNEST Booking and Refund Flow.png` — My Trips, modify/cancel booking, cancellation success and refund status
+- `TRIPNEST Refund Management UI Collage.png` — refund eligibility, policy popup, fee breakdown and estimated refund
 - `TRIPNEST Travel Offers UI Showcase.png`
 - `TRIPNEST Saved Searches UI Grid.png`
 - `TRIPNEST Saved Searches & Price Alerts UI Grid.png`
