@@ -46,7 +46,7 @@ img{max-width:100%}
  .sidebar{order:0}
  .property-row{grid-template-columns:minmax(0,1fr);gap:12px}
  .property-row img{height:210px}
- .property-row .right-price{grid-column:auto;align-items:flex-start;text-align:left;width:100%}
+ .property-row .right-price{grid-column:auto;flex-direction:column;align-items:flex-start;text-align:left;width:100%}
  .property-hero{grid-template-columns:minmax(0,1fr)}
  .property-hero img{height:230px}
  .photo-grid img{height:130px}
