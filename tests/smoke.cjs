@@ -294,7 +294,7 @@ const pages = [
         failures.push("Validation: identical flight origin and destination were not rejected");
       }
       await page.locator("#to").fill("Mumbai");
-      await page.locator("#return").fill(dates.earlier);
+      await page.locator("#return").evaluate((el, value) => { el.removeAttribute("min"); el.value = value; el.dispatchEvent(new Event("input", { bubbles: true })); }, dates.earlier);
       const returnInput = page.locator("#return");
       const returnValidity = await returnInput.evaluate(el => ({ valid: el.validity.valid, message: el.validationMessage }));
       await page.locator('[data-flight-search] button[type="submit"]').click();
