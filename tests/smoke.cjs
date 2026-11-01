@@ -295,8 +295,12 @@ const pages = [
       }
       await page.locator("#to").fill("Mumbai");
       await page.locator("#return").fill(dates.earlier);
+      const returnInput = page.locator("#return");
+      const returnValidity = await returnInput.evaluate(el => ({ valid: el.validity.valid, message: el.validationMessage }));
       await page.locator('[data-flight-search] button[type="submit"]').click();
-      if (!page.url().endsWith("/flights.html") || !(await page.locator("#toast").innerText()).includes("Return date must be on or after departure")) {
+      const returnToast = await page.locator("#toast").innerText().catch(() => "");
+      if (!page.url().endsWith("/flights.html") ||
+          (returnValidity.valid && !returnToast.includes("Return date must be on or after departure"))) {
         failures.push("Validation: return date before departure was not rejected");
       }
 
