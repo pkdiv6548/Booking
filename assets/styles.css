@@ -6,3 +6,5 @@
 .autocomplete-option:hover,.autocomplete-option:focus{background:#eef6ff;filter:none;outline:0}
 .autocomplete-option span:last-child{display:grid;gap:2px}.autocomplete-option small{color:var(--muted);font-weight:400}.autocomplete-pin{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:#edf5ff;color:var(--blue);font-size:19px}
 .autocomplete-empty{padding:14px;color:var(--muted);font-size:14px}
+
+.child-ages{padding:4px 0 10px;border-bottom:1px solid var(--line)}.child-ages .field{margin:8px 0}.child-ages .field label{font-size:13px;color:var(--muted)}.child-ages select{width:100%;border:1px solid #9aaac0;border-radius:6px;padding:9px;background:#fff}
