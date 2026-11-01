@@ -129,7 +129,8 @@ This is a working list of discovered files, not a claim that every image in ever
 
 ## Brand consistency and cross-page audit
 - All 39 HTML pages were checked through the GitHub repository tree: each page includes the shared `assets/styles.css` stylesheet and a TRIPNEST `.brand` link back to `index.html`.
-- The shared `.plane` logo element now renders a single airplane glyph via `.plane::before` instead of displaying the old arrow glyph. The mark uses the same geometry and glyph rule throughout the site, including the mobile breakpoint; dark footer logo variants inherit the appropriate foreground color for contrast.
+- The shared `.plane` logo element renders a single airplane glyph via `.plane::before` instead of displaying the old arrow glyph. The mark uses the same geometry and glyph rule throughout the site, including the mobile breakpoint; dark footer logo variants inherit the appropriate foreground color for contrast.
+- Decorative `<span class="plane">` logo glyphs across all 39 HTML pages now include `aria-hidden="true"`, preventing screen readers from announcing the decorative glyph separately from the brand text. This was applied in batches and committed to the repository.
 - `assets/styles.css` was checked after the logo update: opening and closing brace counts match (230 each), and the desktop/mobile logo rules are present.
 - This is a source-level audit only. Real browser rendering, responsive interaction and deployment checks remain pending; do not describe them as browser-tested.
 
