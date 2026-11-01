@@ -68,6 +68,39 @@ const pages = [
       }
     }
 
+    // Cross-page navigation and modal keyboard interactions.
+    try {
+      await page.setViewportSize({ width: 1365, height: 900 });
+      await page.goto("http://127.0.0.1:4173/index.html", { waitUntil: "domcontentloaded" });
+      await page.locator('.navlinks a[href="stays.html"]').first().click();
+      if (!page.url().endsWith("/stays.html")) failures.push("Navigation: Stays link did not open stays.html");
+
+      await page.locator('[data-open="map-modal"]').click();
+      if (!(await page.locator("#map-modal").evaluate(el => el.classList.contains("open")))) {
+        failures.push("Stays map popup did not open");
+      }
+      await page.keyboard.press("Escape");
+      if (await page.locator("#map-modal").evaluate(el => el.classList.contains("open"))) {
+        failures.push("Stays map popup did not close with Escape");
+      }
+
+      await page.goto("http://127.0.0.1:4173/admin.html", { waitUntil: "domcontentloaded" });
+      const logoutTrigger = page.locator('[data-confirm-action="logout"]').first();
+      await logoutTrigger.click();
+      if (!(await page.locator("[data-confirm-backdrop]").evaluate(el => el.classList.contains("open")))) {
+        failures.push("Admin confirmation dialog did not open");
+      }
+      await page.keyboard.press("Escape");
+      if (await page.locator("[data-confirm-backdrop]").evaluate(el => el.classList.contains("open"))) {
+        failures.push("Admin confirmation dialog did not close with Escape");
+      }
+      if (!(await logoutTrigger.evaluate(el => el === document.activeElement))) {
+        failures.push("Admin confirmation dialog did not restore focus to trigger");
+      }
+    } catch (error) {
+      failures.push("Navigation/modal interaction check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
