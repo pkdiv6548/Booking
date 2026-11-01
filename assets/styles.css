@@ -8,3 +8,6 @@
 .autocomplete-empty{padding:14px;color:var(--muted);font-size:14px}
 
 .child-ages{padding:4px 0 10px;border-bottom:1px solid var(--line)}.child-ages .field{margin:8px 0}.child-ages .field label{font-size:13px;color:var(--muted)}.child-ages select{width:100%;border:1px solid #9aaac0;border-radius:6px;padding:9px;background:#fff}
+
+/* Payment-flow feedback states: prototype only */
+.progress-track{height:8px;background:#e8eef7;border-radius:999px;overflow:hidden;margin:18px 0 4px}.progress-fill{height:100%;width:65%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),#72b7ff);animation:payment-progress 1.2s ease-in-out infinite alternate}@keyframes payment-progress{from{width:28%}to{width:88%}}.notice.danger{background:#fff0f0;border:1px solid #f2b8b5;color:#842029}.notice.success{background:#eaf8ef;border:1px solid #b7e4c7;color:#155b31}button:disabled{opacity:.65;cursor:wait}@media(prefers-reduced-motion:reduce){.progress-fill{animation:none;width:65%}}
