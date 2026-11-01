@@ -61,8 +61,8 @@ Re-check the Library each time work continues and use the newest available refer
 ## Verification notes
 - Static cross-page audit checked all 39 expected HTML routes in batches; all listed pages were retrievable from the repository.
 - HTML `href` and `action` targets in the audited batches did not point to unexpected `.html` filenames. All audited pages include a viewport meta tag, shared stylesheet, and TRIPNEST branding; pages without `assets/app.js` use inline scripts for their standalone interactions.
-- Shared CSS contains responsive breakpoints at 950px and 640px.
-- `assets/app.js` was previously syntax-checked. Static checks do not replace real browser smoke tests, mobile/responsive testing, or full end-to-end flow validation.
+- Shared CSS contains general responsive breakpoints at 1000px, 700px, and 380px, plus a 640px refund-timeline breakpoint. Keyboard focus visibility is styled with `:focus-visible`.
+- `assets/app.js` passes a JavaScript syntax check; inline scripts on the audited homepage, flight results, car voucher, flight ticket, My Trips, refunds, flight management, and privacy pages also pass syntax checks. CSS braces are balanced. Static checks do not replace real browser smoke tests, mobile/responsive testing, or full end-to-end flow validation.
 
 
 
