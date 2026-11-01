@@ -61,7 +61,7 @@ img{max-width:100%}
 @media(max-width:380px){
  .container{width:calc(100% - 20px)}
  .brand{font-size:20px}
- .plane{width:30px;height:30px;font-size:16px}
+ .plane{width:30px;height:30px;font-size:0;flex-basis:30px}.plane::before{font-size:16px}
  .navright .btn{padding:8px 10px}
  .modal{padding:14px}
 }
