@@ -23,7 +23,9 @@ Open index.html in a browser, or enable GitHub Pages in repository settings and 
 - flights.html, cars.html, experiences.html, airport-transfers.html, offers.html — travel categories
 - help.html, privacy.html — support and policy screens
 
-Some routes may still be in progress. The design references from the separate “Bookingcom Hompage Research” conversation are the intended visual source of truth; newly generated reference screens should be incorporated incrementally without changing the shared brand identity.
+Reference monitoring: the available Library currently includes “Booking.com Complete UX Flowboard”, “TRIPNEST Booking Flow UI Montage”, “TRIPNEST Travel Booking UI Infographic”, “TRIPNEST Refund Management UI Collage”, “TRIPNEST Support Centre UI Montage”, “TRIPNEST Saved Searches & Price Alerts UI Grid”, “TRIPNEST Membership Rewards Dashboard Collage”, “TRIPNEST Flight Booking Payment Journey”, and the newer “TRIPNEST Flight Booking Journey” reference. Re-check the Library for new reference images when continuing work; the separate research conversation does not automatically sync assets into this repository.
+
+The website is an incremental implementation, not yet a complete recreation of every reference screen. Keep the TRIPNEST logo, navy header, responsive styling, and distinct HTML pages consistent as new reference screens are added.
 
 ## Prototype scope
 Search, filtering, saved items, modals, and demo booking steps may run in the browser. Listings and prices are sample data. No real reservations or payments are processed. This is an independent prototype and is not affiliated with Booking.com.
