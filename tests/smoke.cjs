@@ -52,10 +52,16 @@ const pages = [
       try {
         await page.setViewportSize({ width, height: 844 });
         await page.goto("http://127.0.0.1:4173/" + file, { waitUntil: "domcontentloaded" });
-        const overflow = await page.evaluate(() =>
-          document.documentElement.scrollWidth > document.documentElement.clientWidth + 2
-        );
-        if (overflow) failures.push(file + " at " + width + "px: horizontal overflow");
+        const overflow = await page.evaluate(() => {
+          const root = document.documentElement;
+          const offenders = [...document.querySelectorAll("body *")]
+            .map(el => ({ tag: el.tagName.toLowerCase(), cls: String(el.className || "").slice(0, 70),
+              right: Math.round(el.getBoundingClientRect().right), width: Math.round(el.getBoundingClientRect().width) }))
+            .filter(el => el.right > root.clientWidth + 2)
+            .sort((a, b) => b.right - a.right).slice(0, 5);
+          return root.scrollWidth > root.clientWidth + 2 ? offenders : null;
+        });
+        if (overflow) failures.push(file + " at " + width + "px: horizontal overflow; elements=" + JSON.stringify(overflow));
       } catch (error) {
         failures.push(file + " responsive check: " + error.message);
       }
