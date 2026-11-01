@@ -127,5 +127,11 @@ This is a working list of discovered files, not a claim that every image in ever
 7. Because references are generated in a separate chat, they are not automatically synchronized to GitHub. Re-search the Library each time this project is continued and use the newest available matching references.
 
 
+## Brand consistency and cross-page audit
+- All 39 HTML pages were checked through the GitHub repository tree: each page includes the shared `assets/styles.css` stylesheet and a TRIPNEST `.brand` link back to `index.html`.
+- The shared `.plane` logo element now renders a single airplane glyph via `.plane::before` instead of displaying the old arrow glyph. The mark uses the same geometry and glyph rule throughout the site, including the mobile breakpoint; dark footer logo variants inherit the appropriate foreground color for contrast.
+- `assets/styles.css` was checked after the logo update: opening and closing brace counts match (230 each), and the desktop/mobile logo rules are present.
+- This is a source-level audit only. Real browser rendering, responsive interaction and deployment checks remain pending; do not describe them as browser-tested.
+
 ## Prototype scope and limitations
 Search, filters, saved items, modals, and demo booking steps may run in the browser. Listings and prices are sample data, and some state is stored in `localStorage`. No real inventory is queried, and no real reservations, payments, refunds, or external notifications are processed. Do not enter real payment credentials. This is an independent prototype and is not affiliated with Booking.com.
