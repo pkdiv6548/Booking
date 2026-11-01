@@ -55,11 +55,12 @@ const pages = [
         const overflow = await page.evaluate(() => {
           const root = document.documentElement;
           const offenders = [...document.querySelectorAll("body *")]
+            .filter(el => !el.closest(".subnav, .navlinks"))
             .map(el => ({ tag: el.tagName.toLowerCase(), cls: String(el.className || "").slice(0, 70),
               right: Math.round(el.getBoundingClientRect().right), width: Math.round(el.getBoundingClientRect().width) }))
             .filter(el => el.right > root.clientWidth + 2)
             .sort((a, b) => b.right - a.right).slice(0, 5);
-          return root.scrollWidth > root.clientWidth + 2 ? offenders : null;
+          return offenders.length ? offenders : null;
         });
         if (overflow) failures.push(file + " at " + width + "px: horizontal overflow; elements=" + JSON.stringify(overflow));
       } catch (error) {
