@@ -50,7 +50,7 @@ Open `index.html` in a browser, or enable GitHub Pages in repository settings an
 - `help.html`, `support.html`, `privacy.html`
 
 ## Reference-image workflow
-The user reports that the separate **“Bookingcom Hompage Research”** conversation has generated images through **Prototype 41 — TRIPNEST Car Rental Booking**. The latest matching files currently visible in the Library are:
+The user now reports that the separate **“Booking Homepage Research”** conversation has reached **Prototype 64**. Treat Prototype 64 as the newest design milestone reported by the user. A fresh Library search did not return an image explicitly named or indexed as Prototype 64, so do not claim its exact screen content has been inspected until that image is visible in the Library. The latest matching files currently visible in the Library are:
 - `TRIPNEST Car Rental Booking Flow(1).png`
 - `TRIPNEST Car Rental Booking Storyboard.png`
 - `TRIPNEST Flight Booking Journey.png`
@@ -68,7 +68,7 @@ Re-check the Library each time work continues and use the newest available refer
 
 ## Reference-first implementation policy (updated 1 Nov 2026)
 
-The user has identified the separate conversation **“Bookingcom Hompage Research”** and reports that it contains generated references through **Prototype 41 — TRIPNEST Car Rental Booking**. Treat *all relevant TRIPNEST images visible in the Library* as design references, not only the newest car-rental collage. The reference scope includes individual pages, all steps/states of each journey, dialogs/modals, dropdowns, calendars, validation errors, warning/success/error alerts, confirmation states, notification panels, empty/loading states, and print/voucher views.
+The user has identified the separate conversation **“Booking Homepage Research”** and reports that it now contains **64 prototypes**. Treat Prototype 64 as the latest milestone reported by the user, and treat *all relevant TRIPNEST images visible in the Library* as design references, not only the newest car-rental collage. A Library search did not yet surface an image explicitly identifiable as Prototype 64; continue to use the newest matching images actually available and do not guess the unseen prototype's content. The reference scope includes individual pages, all steps/states of each journey, dialogs/modals, dropdowns, calendars, validation errors, warning/success/error alerts, confirmation states, notification panels, empty/loading states, and print/voucher views.
 
 ### Reference catalogue currently discovered in the Library
 This is a working list of discovered files, not a claim that every image in every conversation has been enumerated. Search the Library again on every continuation and extend the list when new matching images are available.
