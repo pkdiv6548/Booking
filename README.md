@@ -136,3 +136,22 @@ This is a working list of discovered files, not a claim that every image in ever
 
 ## Prototype scope and limitations
 Search, filters, saved items, modals, and demo booking steps may run in the browser. Listings and prices are sample data, and some state is stored in `localStorage`. No real inventory is queried, and no real reservations, payments, refunds, or external notifications are processed. Do not enter real payment credentials. This is an independent prototype and is not affiliated with Booking.com.
+
+
+## Prototype 64 — TRIPNEST Admin & Security screens
+The reported Prototype 64 from the separate “Booking Homepage Research” chat specifies 16 screens: Admin Dashboard, User Management, Roles & Permissions, Create/Edit Role, Add/Edit User, Access Control, Login History, Audit Logs, Security Alerts, Alert Details, Block/Unblock Confirmation, Unblock Success, System Settings, Password Policy, 2FA Setup, and Admin Logout. The admin module has been added using the same TRIPNEST name/plane mark and a consistent Navy Blue + Blue + White visual system.
+
+New admin routes:
+- `admin.html` — dashboard and recent security activity
+- `admin-users.html` — searchable user management table
+- `admin-roles.html`, `admin-role-editor.html` — role catalogue and permission editor
+- `admin-user-editor.html` — add/edit user form
+- `admin-access-control.html` — role access matrix and safeguards
+- `admin-login-history.html`, `admin-audit-logs.html` — searchable sample security records
+- `admin-security-alerts.html`, `admin-alert-details.html` — alert queue and investigation details
+- `admin-confirm-action.html`, `admin-unblock-success.html` — block/unblock confirmation and success states
+- `admin-settings.html`, `admin-password-policy.html`, `admin-2fa.html` — settings, password policy and MFA setup UI
+- `admin-logout.html` — demo signed-out state
+- `assets/admin.css`, `assets/admin.js` — responsive admin design system and demo interactions
+
+**Security limitation:** this is a UI prototype. Form settings are stored only in the local browser; sample accounts/logs are not real; block/unblock and logout do not revoke sessions or change real users; 2FA is not enrolled or verified. Production login, server-enforced RBAC, durable audit logs, session revocation, MFA and alert ingestion require a backend/identity provider. Admin pages have not yet passed a real browser end-to-end test.
