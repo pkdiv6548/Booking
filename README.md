@@ -253,3 +253,25 @@ Implemented 16 separate frontend routes based on the labelled Prototype 086/100 
 - `corporate-setup-success.html` — Corporate Account Setup Success
 
 The module uses the shared TRIPNEST header and navy/blue/white design system, includes responsive sidebar navigation, demo tables/forms, budget bars, sample approval and billing views, and local interaction feedback. Company, employee, spend, booking, expense and invoice data are fictional. The UI does not create real accounts, send employee invitations, approve real trips, book travel, or process invoices/payments.
+
+
+## Prototype 87 — Meetings, Events & Group Travel Booking
+Implemented 16 separate frontend screens based on the labelled Prototype 087/100 board in the reference PDF:
+- `group-travel.html` — Group Travel Dashboard
+- `group-create-trip.html` — Create Group Trip
+- `group-trip-details.html` — Group Trip Details
+- `group-add-members.html` — Add Group Members
+- `group-invite-participants.html` — Invite Participants
+- `group-rsvp-status.html` — Participant RSVP Status
+- `group-hotel-search.html` — Group Hotel Search
+- `group-room-allocation.html` — Group Room Allocation
+- `group-flight-booking.html` — Group Flight Booking
+- `group-meeting-venue.html` — Meeting Venue Search
+- `group-event-agenda.html` — Event Space Details
+- `group-budget-split.html` — Group Budget & Cost Split
+- `group-booking-review.html` — Group Booking Review
+- `group-organizer-approval.html` — Organizer Approval
+- `group-booking-confirmation.html` — Group Booking Confirmation
+- `group-expense-overview.html` — Group Expense Overview
+
+The screens include a consistent TRIPNEST shell, responsive group-travel navigation, RSVP/participant tables, sample hotel and venue cards, rooming, itinerary review, cost split and demo approval flows. All attendees, availability, fares and prices are fictional; no real invitations, bookings, payments or expense settlements occur.
