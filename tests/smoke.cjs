@@ -75,6 +75,22 @@ const pages = [
   "security-access-rules.html",
   "security-audit-logs.html",
   "security-success.html",
+  "language-selection.html",
+  "change-language-popup.html",
+  "translation-management.html",
+  "edit-translation.html",
+  "missing-translation-alerts.html",
+  "regional-currency-settings.html",
+  "currency-conversion-display.html",
+  "country-region-selection.html",
+  "date-format-preferences.html",
+  "timezone-settings.html",
+  "number-format-settings.html",
+  "accessibility-settings.html",
+  "text-size-contrast.html",
+  "keyboard-navigation-guide.html",
+  "screen-reader-preferences.html",
+  "localization-settings-success.html",
   "admin.html", "admin-users.html", "admin-roles.html", "admin-role-editor.html",
   "admin-user-editor.html", "admin-access-control.html", "admin-login-history.html",
   "admin-audit-logs.html", "admin-security-alerts.html", "admin-alert-details.html",
@@ -423,6 +439,21 @@ const pages = [
     } catch (error) {
       failures.push("Localization draft interaction check: " + error.message);
     }
+
+
+    // Prototype 80/81/84 local-only interaction sanity checks.
+    try {
+      await page.goto("http://127.0.0.1:4173/api-key-create.html", { waitUntil: "domcontentloaded" });
+      await page.locator("#keyName").fill("Smoke test demo key");
+      await page.locator('form[data-api-form="api-key-create"] button[type="submit"]').click();
+      if (!(await page.locator(".api-status").innerText()).includes("not generated")) failures.push("API key demo: safe local-only confirmation missing");
+      await page.goto("http://127.0.0.1:4173/security-mfa.html", { waitUntil: "domcontentloaded" });
+      await page.locator('form[data-security-form="security-mfa"] button[type="submit"]').click();
+      if (!(await page.locator(".sec-status").innerText()).includes("No real accounts")) failures.push("Security demo: local-only confirmation missing");
+      await page.goto("http://127.0.0.1:4173/change-language-popup.html", { waitUntil: "domcontentloaded" });
+      await page.locator("[data-locale-confirm]").click();
+      if (!(await page.locator(".loc84-status").innerText()).includes("Hindi selected")) failures.push("Prototype 84: language confirmation did not complete");
+    } catch (error) { failures.push("Prototype interaction sanity check: " + error.message); }
 
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
