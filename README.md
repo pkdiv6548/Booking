@@ -42,6 +42,26 @@ Open `index.html` in a browser, or enable GitHub Pages in repository settings an
 - `car-confirmation.html`, `car-voucher.html` — confirmation and rental voucher
 - `car-manage.html` — sample rental management and pickup checklist
 
+### Car rentals
+- Existing starter screens: `cars.html`, `car-results.html`, `car-driver.html`, `car-payment.html`, `car-confirmation.html`, `car-voucher.html`, `car-manage.html`.
+- Prototype 95 — Car Rental & Rental Management (16 dedicated routes):
+  - `cars-rental-dashboard.html` — Car Rental Dashboard
+  - `cars-rental-search.html` — Search Rental Cars
+  - `cars-rental-results.html` — Rental Car Results
+  - `cars-rental-filters.html` — Car Rental Filters & Sorting
+  - `cars-rental-details.html` — Vehicle Details & Specifications
+  - `cars-rental-policies.html` — Rental Policies & Deposit
+  - `cars-rental-pickup.html` — Pickup Location & Instructions
+  - `cars-rental-driver.html` — Driver Eligibility & Licence Details
+  - `cars-rental-extras.html` — Add-ons & Equipment
+  - `cars-rental-review.html` — Review Rental
+  - `cars-rental-payment.html` — Payment Preview
+  - `cars-rental-confirmation.html` — Rental Confirmation & Voucher
+  - `cars-rental-manage.html` — Manage Rental
+  - `cars-rental-change.html` — Modify Rental Dates & Vehicle
+  - `cars-rental-cancel-refund.html` — Cancellation & Refund
+  - `cars-rental-return.html` — Return Checklist & Rental Status
+
 ### Other travel and account pages
 - `experiences.html`, `airport-transfers.html`, `offers.html`
 - `login.html`, `register.html`, `profile.html`
