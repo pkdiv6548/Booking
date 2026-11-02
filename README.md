@@ -385,3 +385,25 @@ Implemented 16 separate frontend routes:
 - `trains-live-status.html` — Train Status & Journey Alerts
 
 Includes responsive rail search, sample train cards, route/stops table, class comparison, mock availability, passenger/berth preferences, meals, fare review, payment preview, confirmation, cancellation/refund and status screens. All rail services, schedules, availability and fares are fictional; no live railway inventory, ticket issuance, payment or real-time status is connected.
+
+
+## Prototype 93 — Bus Booking & Intercity Travel Management
+Implemented 16 separate frontend routes:
+- `buses-dashboard.html` — Bus Booking Dashboard
+- `buses-search.html` — Search Buses
+- `buses-results.html` — Bus Search Results
+- `buses-filters.html` — Bus Filters & Sorting
+- `buses-details.html` — Bus Details & Journey
+- `buses-boarding-points.html` — Boarding & Dropping Points
+- `buses-seats.html` — Bus Seat Selection
+- `buses-passengers.html` — Passenger Details
+- `buses-luggage.html` — Luggage & Baggage
+- `buses-addons.html` — Bus Add-ons & Preferences
+- `buses-review.html` — Review Bus Journey
+- `buses-payment.html` — Bus Payment Preview
+- `buses-confirmation.html` — Bus Booking Confirmation
+- `buses-manage-booking.html` — Manage Bus Booking
+- `buses-cancel-refund.html` — Bus Cancellation & Refund
+- `buses-live-status.html` — Bus Status & Journey Alerts
+
+Screens include sample route search, result/filters, operator details, boarding and drop points, seat selection, passenger and baggage details, optional extras, fare review, non-functional checkout, confirmation, booking management, cancellation/refund preview and trip-status alerts. All operators, trips, seats, prices and references are fictional; no live bus inventory, ticket issuance, payment, cancellation, refund or tracking API is connected.
