@@ -354,6 +354,28 @@ const pages = [
       failures.push("Negative-path validation check: " + error.message);
     }
 
+    // Prototype 78 localization draft persistence.
+    try {
+      await page.goto("http://127.0.0.1:4173/localization-languages.html", { waitUntil: "domcontentloaded" });
+      await page.evaluate(() => localStorage.removeItem("tripnest-localization-languages"));
+      await page.locator("#defaultLanguage").selectOption({ label: "Hindi (India)" });
+      await page.locator("#localeCode").fill("hi-IN");
+      await page.locator('form[data-localization-form="languages"] button[type="submit"]').click();
+      const localeDraft = await page.evaluate(() => JSON.parse(localStorage.getItem("tripnest-localization-languages") || "null"));
+      if (!localeDraft || localeDraft.defaultLanguage !== "Hindi (India)" || localeDraft.localeCode !== "hi-IN") {
+        failures.push("Localization: language draft was not persisted correctly");
+      }
+      if (!(await page.locator(".loc-save-status").innerText()).includes("saved in this browser")) {
+        failures.push("Localization: save confirmation status was not shown");
+      }
+      await page.reload({ waitUntil: "domcontentloaded" });
+      if (await page.locator("#defaultLanguage").inputValue() !== "Hindi (India)") {
+        failures.push("Localization: saved language draft was not restored after reload");
+      }
+    } catch (error) {
+      failures.push("Localization draft interaction check: " + error.message);
+    }
+
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
       failures.forEach(item => console.error(" - " + item));
