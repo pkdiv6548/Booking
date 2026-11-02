@@ -189,3 +189,7 @@ Added 16 separate screens: `channel-manager.html`, `channel-connect.html`, `chan
 
 ## Prototype reference audit note
 The Library includes numbered source montages explicitly identifying Prototype 80 (API Integration Hub & Developer Portal), Prototype 81 (Security Center, Fraud Prevention & Risk Monitoring), and Prototype 84 (Accessibility, Language & Localization). Localization pages previously labeled Prototype 78 have been relabeled to match the visible Prototype 84 reference. Numbering for other reference images should be taken from each image itself rather than inferred from filename or previous notes.
+
+
+## Prototype 80 — API Integration Hub & Developer Portal
+Added 16 separate screens: `api-developer.html`, `api-keys.html`, `api-key-create.html`, `api-key-permissions.html`, `api-documentation.html`, `api-explorer.html`, `api-authentication.html`, `api-webhooks.html`, `api-webhook-create.html`, `api-webhook-logs.html`, `api-usage.html`, `api-quotas.html`, `api-error-logs.html`, `api-integration-testing.html`, `api-versioning.html`, `api-success.html`. This follows the visible Prototype 80/100 montage. Key creation, API exploration, webhooks, usage, quotas and integration tests are simulated locally; the project does not create real API credentials or call live endpoints.
