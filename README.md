@@ -407,3 +407,25 @@ Implemented 16 separate frontend routes:
 - `buses-live-status.html` — Bus Status & Journey Alerts
 
 Screens include sample route search, result/filters, operator details, boarding and drop points, seat selection, passenger and baggage details, optional extras, fare review, non-functional checkout, confirmation, booking management, cancellation/refund preview and trip-status alerts. All operators, trips, seats, prices and references are fictional; no live bus inventory, ticket issuance, payment, cancellation, refund or tracking API is connected.
+
+
+## Prototype 94 — Airport Transfers, Private Taxi & Chauffeur Booking
+Implemented 16 separate frontend routes:
+- `transfers-dashboard.html` — Airport Transfer Dashboard
+- `transfers-search.html` — Search Airport Transfers
+- `transfers-results.html` — Transfer Vehicle Results
+- `transfers-filters.html` — Transfer Filters & Sorting
+- `transfers-details.html` — Vehicle & Chauffeur Details
+- `transfers-pickup.html` — Pickup Instructions & Flight Details
+- `transfers-passengers.html` — Transfer Passenger Details
+- `transfers-luggage.html` — Transfer Luggage & Child Seats
+- `transfers-addons.html` — Chauffeur Add-ons & Meet-and-Greet
+- `transfers-review.html` — Review Airport Transfer
+- `transfers-payment.html` — Transfer Payment Preview
+- `transfers-confirmation.html` — Transfer Confirmation
+- `transfers-manage.html` — Manage Transfer Booking
+- `transfers-cancel-refund.html` — Transfer Cancellation & Refund
+- `transfers-status.html` — Driver & Transfer Status
+- `transfers-receipt.html` — Transfer Receipt & Invoice Preview
+
+Includes airport transfer search, vehicle comparisons, filters, vehicle/chauffeur details, pickup and flight instructions, passenger/luggage preferences, optional extras, fare review, demo checkout, confirmation, management, cancellation, status and receipt preview. All vehicle/driver data, fares and reservation references are fictional; no live dispatch, GPS tracking, booking, payment, refund or provider integration is connected.
