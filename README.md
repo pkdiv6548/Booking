@@ -155,3 +155,30 @@ New admin routes:
 - `assets/admin.css`, `assets/admin.js` — responsive admin design system and demo interactions
 
 **Security limitation:** this is a UI prototype. Form settings are stored only in the local browser; sample accounts/logs are not real; block/unblock and logout do not revoke sessions or change real users; 2FA is not enrolled or verified. Production login, server-enforced RBAC, durable audit logs, session revocation, MFA and alert ingestion require a backend/identity provider. Admin pages have not yet passed a real browser end-to-end test.
+
+
+## Prototype-reference implementation update — Prototype 78
+The separate “Bookingcom Hompage Research” chat is the visual source of truth for the TRIPNEST interface. Newly found Library references include Prototype 78 (Multi-Language, Currency & Localization Management), Prototype 79 (Channel Manager & OTA Integrations), Prototype 80 (API Integration Hub & Developer Portal), Prototype 81 (Security Center / Fraud Prevention), and Prototype 82 (Customer Profile, Identity Verification & Account Recovery). The source chat may still be generating additional references; each continuation should search for the newest available reference assets before implementation. These assets do not automatically sync into GitHub.
+
+### Prototype 78 screens added in this update
+- `localization.html` — Localization overview and navigation to all 16 screens
+- `localization-languages.html` — Languages & Locales
+- `localization-currencies.html` — Currency Catalogue
+- `localization-translations.html` — Translation Catalogue
+- `localization-editor.html` — Translation Editor
+- `localization-regions.html` — Regional Settings
+- `localization-date-formats.html` — Date Format Rules
+- `localization-number-formats.html` — Number & Decimal Formats
+- `localization-timezones.html` — Time Zone Catalogue
+- `localization-content-preview.html` — Localized Content Preview
+- `localization-translation-review.html` — Translation Review Queue
+- `localization-import-export.html` — Import & Export
+- `localization-fallbacks.html` — Language Fallback Rules
+- `localization-language-settings.html` — Language Preferences
+- `localization-currency-rules.html` — Currency Display Rules
+- `localization-publish.html` — Publish Localization
+
+The localization screens use the existing shared TRIPNEST header, paper-plane brand mark, navy/blue/white design system, responsive layouts, and accessible form labels. Draft forms persist in browser `localStorage` for demonstration only. They do not alter real exchange rates, customer locale settings, taxes, translation services, or server-side data. The browser smoke test page list now includes all 16 new routes.
+
+### Scope/progress distinction
+The earlier 24-task plan covered the first frontend build and smoke-test baseline; it did not mean that every panel in the 90+ prototype reference set had been implemented. Reference-alignment work is a separate, continuing phase. Prototype 78 is the first new module in that phase; prototypes 79–82 and any newly generated later references remain to be mapped and implemented after their screens are audited against existing pages to avoid duplication.
