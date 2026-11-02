@@ -231,3 +231,25 @@ Implemented a 16-route frontend-only flow based on the uploaded 100-prototype re
 - `insurance-claim-decision.html` — Sample claim decision
 
 All policy values, premiums, claim details and statuses are fictional UI examples. This module does not sell insurance, create a real policy, process payments, transmit uploaded files, submit a claim, or initiate a settlement. No real payment details should be entered.
+
+
+## Prototype 86 — Corporate Travel Management & Business Accounts
+Implemented 16 separate frontend routes based on the labelled Prototype 086/100 board in the uploaded TRIPNEST reference PDF:
+- `corporate-travel.html` — Corporate Travel Dashboard
+- `corporate-business-account.html` — Create Business Account
+- `corporate-company-profile.html` — Company Profile
+- `corporate-employees.html` — Employee Directory
+- `corporate-employee-add.html` — Add Employee
+- `corporate-departments.html` — Department Management
+- `corporate-travel-policy.html` — Corporate Travel Policy
+- `corporate-booking-permissions.html` — Employee Booking Permissions
+- `corporate-trip-request.html` — Business Trip Request
+- `corporate-approval-queue.html` — Manager Approval Queue
+- `corporate-trip-review.html` — Approve / Reject Trip
+- `corporate-bookings.html` — Corporate Booking Overview
+- `corporate-travel-budget.html` — Business Travel Budget
+- `corporate-expenses.html` — Employee Travel Expense Report
+- `corporate-billing.html` — Corporate Invoice & Billing
+- `corporate-setup-success.html` — Corporate Account Setup Success
+
+The module uses the shared TRIPNEST header and navy/blue/white design system, includes responsive sidebar navigation, demo tables/forms, budget bars, sample approval and billing views, and local interaction feedback. Company, employee, spend, booking, expense and invoice data are fictional. The UI does not create real accounts, send employee invitations, approve real trips, book travel, or process invoices/payments.
