@@ -50,6 +50,29 @@ Routes:
 15. `buses-cancel-refund.html` — Bus Cancellation & Refund
 16. `buses-live-status.html` — Bus Status & Journey Alerts
 
+### Prototype 94 — Airport Transfers, Private Taxi & Chauffeur Booking
+- Screens created: **16 / 16 (100% route creation complete)**.
+- README documentation: updated.
+- Browser-rendered visual regression and end-to-end checks: **not yet completed**.
+
+Routes:
+1. `transfers-dashboard.html` — Airport Transfer Dashboard
+2. `transfers-search.html` — Search Airport Transfers
+3. `transfers-results.html` — Transfer Vehicle Results
+4. `transfers-filters.html` — Transfer Filters & Sorting
+5. `transfers-details.html` — Vehicle & Chauffeur Details
+6. `transfers-pickup.html` — Pickup Instructions & Flight Details
+7. `transfers-passengers.html` — Transfer Passenger Details
+8. `transfers-luggage.html` — Transfer Luggage & Child Seats
+9. `transfers-addons.html` — Chauffeur Add-ons & Meet-and-Greet
+10. `transfers-review.html` — Review Airport Transfer
+11. `transfers-payment.html` — Transfer Payment Preview
+12. `transfers-confirmation.html` — Transfer Confirmation
+13. `transfers-manage.html` — Manage Transfer Booking
+14. `transfers-cancel-refund.html` — Transfer Cancellation & Refund
+15. `transfers-status.html` — Driver & Transfer Status
+16. `transfers-receipt.html` — Transfer Receipt & Invoice Preview
+
 ### Earlier modules
 - Prototype 85 — Travel Insurance & Claims: **16/16 routes created (100%)**.
 - Prototype 86 — Corporate Travel Management: **16/16 routes created (100%)**.
@@ -70,8 +93,10 @@ Routes:
 - Prototype 91 route creation: **100% (16/16)**.
 - Prototype 92 route creation: **100% (16/16)**.
 - Prototype 93 route creation: **100% (16/16)**.
+- Prototype 94 route creation: **100% (16/16)**.
 - Prototype 92 documentation: **100%**.
 - Prototype 93 documentation: **100%**.
+- Prototype 94 documentation: **100%**.
 - Reference board coverage across the 100-board set: **in progress**.
 - Overall website completion percentage: **not accurately measurable yet**; route creation alone does not establish reference fidelity, working behavior, or coverage of every board.
 - Expected GitHub Pages URL: `https://prem-pk-dev.github.io/Booking/` (**latest deployment not verified**).
@@ -79,4 +104,4 @@ Routes:
 - Reference map: `docs/PROTOTYPE_REFERENCE_MAP.md`
 
 ## Safety and product scope
-Frontend-only demo. Bus and train names, numbers, schedules, availability, fares and booking references are fictional. No live railway inventory, ticket issuance, payment, status feed, insurance, claims, refunds, invoice settlement or external messaging is connected. Do not enter real identity or payment data into the prototype.
+Frontend-only demo. Transfer vehicle/driver data, bus and train names, schedules, availability, fares and booking references are fictional. No live railway inventory, ticket issuance, payment, status feed, insurance, claims, refunds, invoice settlement or external messaging is connected. Do not enter real identity or payment data into the prototype.
