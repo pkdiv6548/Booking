@@ -91,6 +91,22 @@ const pages = [
   "keyboard-navigation-guide.html",
   "screen-reader-preferences.html",
   "localization-settings-success.html",
+  "customer-profile.html",
+  "profile-edit.html",
+  "email-verification.html",
+  "phone-verification.html",
+  "identity-document-upload.html",
+  "verification-status.html",
+  "account-2fa.html",
+  "recovery-email-setup.html",
+  "forgot-password.html",
+  "reset-password.html",
+  "account-recovery.html",
+  "identity-review-admin.html",
+  "verification-failure.html",
+  "identity-resubmission.html",
+  "account-security-settings.html",
+  "identity-verification-success.html",
   "admin.html", "admin-users.html", "admin-roles.html", "admin-role-editor.html",
   "admin-user-editor.html", "admin-access-control.html", "admin-login-history.html",
   "admin-audit-logs.html", "admin-security-alerts.html", "admin-alert-details.html",
@@ -454,6 +470,17 @@ const pages = [
       await page.locator("[data-locale-confirm]").click();
       if (!(await page.locator(".loc84-status").innerText()).includes("Hindi selected")) failures.push("Prototype 84: language confirmation did not complete");
     } catch (error) { failures.push("Prototype interaction sanity check: " + error.message); }
+
+
+    // Prototype 82 local-only identity/recovery interaction check.
+    try {
+      await page.goto("http://127.0.0.1:4173/email-verification.html", { waitUntil: "domcontentloaded" });
+      await page.locator("[data-id82-verify]").click();
+      if (!(await page.locator(".id82-status").innerText()).includes("No real contact method")) failures.push("Prototype 82: safe verification status missing");
+      await page.goto("http://127.0.0.1:4173/identity-review-admin.html", { waitUntil: "domcontentloaded" });
+      await page.locator('[data-id82-review="Approved (demo)"]').click();
+      if (!(await page.locator(".id82-status").innerText()).includes("No real identity record")) failures.push("Prototype 82: identity review demo status missing");
+    } catch (error) { failures.push("Prototype 82 interaction check: " + error.message); }
 
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
