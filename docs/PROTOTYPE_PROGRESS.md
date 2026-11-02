@@ -4,52 +4,47 @@ Updated: 2 November 2026
 
 ## Latest implementation status
 
-### Prototype 87 — Meetings, Events & Group Travel Booking
-- Reference source: uploaded `TRIPNEST_100_Prototype_Reference_Book.pdf`, labelled Prototype 087/100 (PDF archive page 90).
-- Screen routes created: **16 / 16 (100% route creation complete)**.
+### Prototype 88 — Travel Packages, Tours & Custom Itinerary Builder
+- Reference source: uploaded `TRIPNEST_100_Prototype_Reference_Book.pdf`, labelled Prototype 088/100 (archive page 91).
+- Screens created: **16 / 16 (100% route creation complete)**.
 - README documentation: updated.
-- Route existence check: pending final pass below.
 - Browser-rendered visual regression and end-to-end checks: **not yet completed**.
 
 Routes:
-1. `group-travel.html` — Group Travel Dashboard
-2. `group-create-trip.html` — Create Group Trip
-3. `group-trip-details.html` — Group Trip Details
-4. `group-add-members.html` — Add Group Members
-5. `group-invite-participants.html` — Invite Participants
-6. `group-rsvp-status.html` — Participant RSVP Status
-7. `group-hotel-search.html` — Group Hotel Search
-8. `group-room-allocation.html` — Group Room Allocation
-9. `group-flight-booking.html` — Group Flight Booking
-10. `group-meeting-venue.html` — Meeting Venue Search
-11. `group-event-agenda.html` — Event Space Details
-12. `group-budget-split.html` — Group Budget & Cost Split
-13. `group-booking-review.html` — Group Booking Review
-14. `group-organizer-approval.html` — Organizer Approval
-15. `group-booking-confirmation.html` — Group Booking Confirmation
-16. `group-expense-overview.html` — Group Expense Overview
+1. `packages-dashboard.html` — Travel Packages Dashboard
+2. `packages-browse.html` — Browse Travel Packages
+3. `packages-category-selection.html` — Package Category Selection
+4. `packages-details.html` — Package Details
+5. `packages-destination-highlights.html` — Destination Highlights
+6. `packages-daywise-itinerary.html` — Day-wise Itinerary
+7. `packages-customize.html` — Customize Travel Package
+8. `packages-addons-excursions.html` — Add Activities & Excursions
+9. `packages-accommodation.html` — Select Accommodation
+10. `packages-transportation.html` — Select Transportation
+11. `packages-traveller-preferences.html` — Traveller Preferences
+12. `packages-price-breakdown.html` — Package Price Breakdown
+13. `packages-compare.html` — Package Comparison
+14. `packages-custom-itinerary.html` — Save Custom Package
+15. `packages-booking-checkout.html` — Package Booking Checkout
+16. `packages-booking-confirmation.html` — Package Booking Confirmation
 
-### Prototype 86 — Corporate Travel Management & Business Accounts
-- Screen routes created and source-checked: **16 / 16 (100% route creation complete)**.
-- README documentation: complete.
-- Browser-rendered visual regression and end-to-end checks: **not yet completed**.
-
-### Prototype 85 — Travel Insurance, Protection Plans & Claims
-- Screen routes created: **16 / 16 (100% route creation complete)**.
-- README documentation: complete.
-- Browser-rendered visual regression and end-to-end checks: **not yet completed**.
+### Earlier modules
+- Prototype 85 — Travel Insurance & Claims: **16/16 routes created (100%)**.
+- Prototype 86 — Corporate Travel Management: **16/16 routes created (100%)**.
+- Prototype 87 — Meetings, Events & Group Travel: **16/16 routes created (100%)**.
+- Browser visual/interaction verification of these modules: **pending**.
 
 ## Progress meter
 - Prototype 85 route creation: **100% (16/16)**.
 - Prototype 86 route creation: **100% (16/16)**.
 - Prototype 87 route creation: **100% (16/16)**.
-- Prototype 86 and 87 documentation: **100%**.
-- Browser visual/interaction verification across these modules: **pending**.
-- Board-by-board audit for the entire 100-board reference set: **in progress**.
-- Overall website completion percentage: **not accurately measurable yet**; route creation alone does not establish reference fidelity, end-to-end behavior or coverage of all boards.
+- Prototype 88 route creation: **100% (16/16)**.
+- Prototype 88 documentation: **100%**.
+- Reference board coverage across the 100-board set: **in progress**.
+- Overall website completion percentage: **not accurately measurable yet**; route creation alone does not establish reference fidelity, working behavior, or coverage of every board.
 - Expected GitHub Pages URL: `https://prem-pk-dev.github.io/Booking/` (**latest deployment not verified**).
 - Repository: `https://github.com/prem-pk-dev/Booking`
 - Reference map: `docs/PROTOTYPE_REFERENCE_MAP.md`
 
 ## Safety and product scope
-This is a frontend-only demonstration. Corporate/group records, prices, budgets, booking statuses and invoices are fictional. No live travel inventory, real account creation, employee or participant invitations, actual approvals, travel bookings, insurance policies, claims, payments, refunds, invoice settlement or external notifications are connected.
+Frontend-only demo. Package names, supplier names, destinations, rates and itinerary totals are fictional. No live availability, real reservation, payment, insurance, claims, refund, invoice settlement or external messaging is connected.
