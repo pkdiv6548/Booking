@@ -341,3 +341,25 @@ Implemented 16 frontend routes based on the labelled Prototype 090/100 reference
 - `booking-activity-history.html` — Booking Activity History
 
 Includes responsive navigation, booking tables, detail and voucher views, change-request forms, cancellation review, illustrative refund breakdown/status and activity history. Booking references, dates, policies and amounts are fictional. No real reservation is changed/cancelled, and no payment or refund is processed.
+
+
+## Prototype 91 — Flights, Airlines & Flight Booking Management
+Implemented 16 separate frontend routes:
+- `flights-dashboard.html` — Flight Booking Dashboard
+- `flights-search.html` — Search Flights
+- `flights-results.html` — Flight Search Results
+- `flights-filters.html` — Flight Filters & Sorting
+- `flights-details.html` — Flight Details
+- `flights-fare-options.html` — Fare Options & Rules
+- `flights-passengers.html` — Passenger Information
+- `flights-seats.html` — Seat Selection
+- `flights-baggage.html` — Baggage & Extras
+- `flights-addons.html` — Flight Add-ons
+- `flights-review.html` — Review Flight Booking
+- `flights-payment.html` — Flight Payment Preview
+- `flights-confirmation.html` — Flight Booking Confirmation
+- `flights-manage-booking.html` — Manage Flight Booking
+- `flights-change-cancel.html` — Flight Changes & Cancellation
+- `flights-status.html` — Flight Status & Alerts
+
+Includes responsive flight search, sample result filtering/sorting, itinerary/fare views, passenger demo form, interactive seat selector, baggage/add-ons, review and payment preview, confirmation, change/cancellation and status screens. Airlines, flight numbers, schedules, seat inventory and fares are fictional; no live airline API, ticket issuance, payment gateway or status feed is connected.
