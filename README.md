@@ -158,9 +158,9 @@ New admin routes:
 
 
 ## Prototype-reference implementation update — Prototype 78
-The separate “Bookingcom Hompage Research” chat is the visual source of truth for the TRIPNEST interface. Newly found Library references include Prototype 78 (Multi-Language, Currency & Localization Management), Prototype 79 (Channel Manager & OTA Integrations), Prototype 80 (API Integration Hub & Developer Portal), Prototype 81 (Security Center / Fraud Prevention), and Prototype 82 (Customer Profile, Identity Verification & Account Recovery). The source chat may still be generating additional references; each continuation should search for the newest available reference assets before implementation. These assets do not automatically sync into GitHub.
+The separate “Bookingcom Hompage Research” chat is the visual source of truth for the TRIPNEST interface. Newly found Library references include Prototype 84 (Accessibility, Language & Localization), Prototype 79 (Channel Manager & OTA Integrations), Prototype 80 (API Integration Hub & Developer Portal), Prototype 81 (Security Center / Fraud Prevention), and Prototype 82 (Customer Profile, Identity Verification & Account Recovery). The source chat may still be generating additional references; each continuation should search for the newest available reference assets before implementation. These assets do not automatically sync into GitHub.
 
-### Prototype 78 screens added in this update
+### Prototype 84 screens added in this update
 - `localization.html` — Localization overview and navigation to all 16 screens
 - `localization-languages.html` — Languages & Locales
 - `localization-currencies.html` — Currency Catalogue
@@ -181,4 +181,11 @@ The separate “Bookingcom Hompage Research” chat is the visual source of trut
 The localization screens use the existing shared TRIPNEST header, paper-plane brand mark, navy/blue/white design system, responsive layouts, and accessible form labels. Draft forms persist in browser `localStorage` for demonstration only. They do not alter real exchange rates, customer locale settings, taxes, translation services, or server-side data. The browser smoke test page list now includes all 16 new routes.
 
 ### Scope/progress distinction
-The earlier 24-task plan covered the first frontend build and smoke-test baseline; it did not mean that every panel in the 90+ prototype reference set had been implemented. Reference-alignment work is a separate, continuing phase. Prototype 78 is the first new module in that phase; prototypes 79–82 and any newly generated later references remain to be mapped and implemented after their screens are audited against existing pages to avoid duplication.
+The earlier 24-task plan covered the first frontend build and smoke-test baseline; it did not mean that every panel in the 90+ prototype reference set had been implemented. Reference-alignment work is a separate, continuing phase. Prototype 84 is now implemented; Prototype 79 is the current channel-management module, Prototype 80 is the API developer portal, Prototype 81 is the security center, and customer profile/account recovery references remain to be audited and any newly generated later references remain to be mapped and implemented after their screens are audited against existing pages to avoid duplication.
+
+
+## Prototype 79 — Channel Manager & OTA Integrations
+Added 16 separate screens: `channel-manager.html`, `channel-connect.html`, `channel-bookingcom-setup.html`, `channel-connections.html`, `channel-room-mapping.html`, `channel-rate-sync.html`, `channel-inventory-sync.html`, `channel-sync-logs.html`, `channel-sync-conflicts.html`, `channel-performance.html`, `channel-commissions.html`, `channel-policy-mapping.html`, `channel-bookings.html`, `channel-settings.html`, `channel-health.html`, `channel-success.html`. The module follows the available 16-panel TRIPNEST Channel Manager reference montage: channel overview, channel connection, Booking.com setup, connected channels, room mapping, rate sync, inventory sync, sync logs, conflict resolution, performance analytics, commission rules, policy mapping, centralized OTA bookings, settings, integration health, and success state. All connections, metrics, and actions are local demo UI; no OTA credentials are collected and no real provider API is called. Smoke tests include all 16 new routes.
+
+## Prototype reference audit note
+The Library includes numbered source montages explicitly identifying Prototype 80 (API Integration Hub & Developer Portal), Prototype 81 (Security Center, Fraud Prevention & Risk Monitoring), and Prototype 84 (Accessibility, Language & Localization). Localization pages previously labeled Prototype 78 have been relabeled to match the visible Prototype 84 reference. Numbering for other reference images should be taken from each image itself rather than inferred from filename or previous notes.
