@@ -73,6 +73,31 @@ Routes:
 15. `transfers-status.html` — Driver & Transfer Status
 16. `transfers-receipt.html` — Transfer Receipt & Invoice Preview
 
+### Prototype 95 — Car Rental & Rental Management
+- Screens created: **16 / 16 (100% route creation complete)**.
+- README documentation: updated.
+- Functional smoke checks: **not yet completed**.
+- Browser-rendered responsive/visual regression and end-to-end checks: **not yet completed**.
+- Scope: frontend-only demo; no live vehicle inventory, supplier booking, payment, identity/licence verification, cancellation, refund, or rental-status integration.
+
+Routes:
+1. `cars-rental-dashboard.html` — Car Rental Dashboard
+2. `cars-rental-search.html` — Search Rental Cars
+3. `cars-rental-results.html` — Rental Car Results
+4. `cars-rental-filters.html` — Car Rental Filters & Sorting
+5. `cars-rental-details.html` — Vehicle Details & Specifications
+6. `cars-rental-policies.html` — Rental Policies & Deposit
+7. `cars-rental-pickup.html` — Pickup Location & Instructions
+8. `cars-rental-driver.html` — Driver Eligibility & Licence Details
+9. `cars-rental-extras.html` — Add-ons & Equipment
+10. `cars-rental-review.html` — Review Rental
+11. `cars-rental-payment.html` — Payment Preview
+12. `cars-rental-confirmation.html` — Rental Confirmation & Voucher
+13. `cars-rental-manage.html` — Manage Rental
+14. `cars-rental-change.html` — Modify Rental Dates & Vehicle
+15. `cars-rental-cancel-refund.html` — Cancellation & Refund
+16. `cars-rental-return.html` — Return Checklist & Rental Status
+
 ### Earlier modules
 - Prototype 85 — Travel Insurance & Claims: **16/16 routes created (100%)**.
 - Prototype 86 — Corporate Travel Management: **16/16 routes created (100%)**.
@@ -94,6 +119,8 @@ Routes:
 - Prototype 92 route creation: **100% (16/16)**.
 - Prototype 93 route creation: **100% (16/16)**.
 - Prototype 94 route creation: **100% (16/16)**.
+- Prototype 95 route creation: **100% (16/16)**.
+- Prototype 95 documentation: **100%**.
 - Prototype 92 documentation: **100%**.
 - Prototype 93 documentation: **100%**.
 - Prototype 94 documentation: **100%**.
