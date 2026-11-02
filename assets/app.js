@@ -65,5 +65,28 @@ $('#car-driver-form')?.addEventListener('submit',e=>{e.preventDefault();const fo
 const createCarDemoBooking=()=>{const form=$('#car-payment-form');if(!form||!form.reportValidity())return;if(!$('#car-terms')?.checked){toast('Accept the sample rental terms to continue');return}const car=JSON.parse(localStorage.getItem('tripnest-selected-car')||'null')||{name:'Hyundai Creta or Similar',price:15117};const search=JSON.parse(localStorage.getItem('tripnest-car-search')||'{}');const driver=JSON.parse(localStorage.getItem('tripnest-car-driver')||'{}');const booking={id:'TRCR'+Math.random().toString(36).slice(2,8).toUpperCase(),pnr:Math.random().toString(36).slice(2,8).toUpperCase(),car:car.name,basePrice:Number(car.basePrice??car.price??15117),insurancePrice:Number(car.insurancePrice||0),price:Number(car.price??15117),insurance:localStorage.getItem('tripnest-car-insurance')||'Basic Protection',driver:[driver.firstName,driver.lastName].filter(Boolean).join(' ')||'Demo traveller',method:new FormData(form).get('method')||'Card',created:new Date().toISOString(),status:'Demo confirmed'};localStorage.setItem('tripnest-car-booking',JSON.stringify(booking));const status=$('#car-payment-status');if(status)status.textContent='Demo payment completed; no money was charged.';const summary=$('#car-payment-success-summary');if(summary)summary.textContent='Booking '+booking.id+' · '+booking.car+' · ₹'+Number(booking.price).toLocaleString('en-IN')+'. No real payment was processed.';open('car-payment-success-modal')};$('#car-payment-form')?.addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;if(!$('#car-terms')?.checked){toast('Accept the sample rental terms to continue');return}open('car-payment-processing-modal');setTimeout(()=>{close('car-payment-processing-modal');createCarDemoBooking()},700)});$('#car-payment-preview-failure')?.addEventListener('click',()=>{const form=$('#car-payment-form');if(!form?.reportValidity())return;if(!$('#car-terms')?.checked){toast('Accept the sample rental terms before previewing checkout states');return}open('car-payment-failed-modal')});$('#car-payment-retry')?.addEventListener('click',()=>{close('car-payment-failed-modal');$('#car-payment-form')?.requestSubmit()});$('#car-payment-change-method')?.addEventListener('click',()=>{close('car-payment-failed-modal');const method=$('#car-payment-form input[name="method"]');method?.focus()});$('#car-payment-view-confirmation')?.addEventListener('click',()=>{location.href='car-confirmation.html'});
 $$('[data-car-manage-action]').forEach(b=>b.addEventListener('click',()=>{const n=$('#car-manage-notice');if(n)n.textContent=b.dataset.carManageAction+' is a demo-only action. No rental provider was contacted.';toast(b.dataset.carManageAction+' preview only')}));
 updateGuests();})();
-// Prototype 78: persist localization drafts in this browser only.
-$$('[data-localization-form]').forEach(f=>{const key='tripnest-localization-'+f.dataset.localizationForm;let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){};Object.entries(saved).forEach(([name,value])=>{const el=f.elements.namedItem(name);if(!el)return;if(el.type==='checkbox')el.checked=Boolean(value);else if(el.type!=='submit'&&el.type!=='button')el.value=value});f.addEventListener('submit',e=>{e.preventDefault();const data={};new FormData(f).forEach((value,name)=>{if(Object.prototype.hasOwnProperty.call(data,name)){data[name]=Array.isArray(data[name])?data[name].concat(String(value)):[data[name],String(value)]}else data[name]=String(value)});$$('input[type="checkbox"]',f).forEach(el=>data[el.name]=el.checked);localStorage.setItem(key,JSON.stringify(data));toast('Localization draft saved in this browser')})});
+/* Prototype 78: localization drafts persist in this browser only. */
+document.querySelectorAll('[data-localization-form]').forEach(function(form){
+  const key='tripnest-localization-'+form.dataset.localizationForm;
+  let saved={};
+  try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  Object.entries(saved).forEach(function(entry){
+    const el=form.elements.namedItem(entry[0]); if(!el)return;
+    if(el.type==='checkbox')el.checked=Boolean(entry[1]);
+    else if(el.type!=='submit'&&el.type!=='button')el.value=entry[1];
+  });
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const data={};
+    new FormData(form).forEach(function(value,name){
+      if(Object.prototype.hasOwnProperty.call(data,name)){
+        data[name]=Array.isArray(data[name])?data[name].concat(String(value)):[data[name],String(value)];
+      }else data[name]=String(value);
+    });
+    form.querySelectorAll('input[type="checkbox"]').forEach(function(el){data[el.name]=el.checked});
+    localStorage.setItem(key,JSON.stringify(data));
+    let status=form.querySelector('.loc-save-status');
+    if(!status){status=document.createElement('p');status.className='loc-save-status muted';status.setAttribute('role','status');form.append(status)}
+    status.textContent='Localization draft saved in this browser. No server was contacted.';
+  });
+});
