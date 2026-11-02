@@ -319,3 +319,25 @@ Implemented 16 separate frontend routes based on the labelled Prototype 089/100 
 - `destination-recommendations.html` — Personalised Destination Recommendations
 
 Includes responsive destination navigation, destination and activity cards, seasonal planning, sample guide and food directories, an illustrative points-of-interest map, safety checklist and a local budget estimate. It does not connect to live weather, GPS/maps, verified providers or real-time availability. Destination listings and prices are illustrative.
+
+
+## Prototype 90 — Booking Management, Changes, Cancellations & Refunds
+Implemented 16 frontend routes based on the labelled Prototype 090/100 reference board:
+- `booking-management.html` — My Bookings Dashboard
+- `booking-upcoming.html` — Upcoming Bookings
+- `booking-details.html` — Booking Details
+- `booking-voucher.html` — Download Booking Voucher (demo print view)
+- `booking-modify-search.html` — Modify Booking Dates
+- `booking-traveller-edit.html` — Change Traveller Details
+- `booking-room-change.html` — Change Room or Service
+- `booking-cancellation-review.html` — Cancellation Policy Review
+- `booking-cancellation-confirm.html` — Confirm Cancellation
+- `booking-cancellation-success.html` — Cancellation Request Submitted
+- `booking-refund-eligibility.html` — Refund Eligibility Check
+- `booking-refund-breakdown.html` — Refund Calculation Breakdown
+- `booking-refund-status.html` — Refund Status Tracking
+- `booking-payment-method.html` — Booking Modification Payment Preview
+- `booking-change-confirmation.html` — Booking Change Confirmation
+- `booking-activity-history.html` — Booking Activity History
+
+Includes responsive navigation, booking tables, detail and voucher views, change-request forms, cancellation review, illustrative refund breakdown/status and activity history. Booking references, dates, policies and amounts are fictional. No real reservation is changed/cancelled, and no payment or refund is processed.
