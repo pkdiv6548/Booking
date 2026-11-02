@@ -363,3 +363,25 @@ Implemented 16 separate frontend routes:
 - `flights-status.html` — Flight Status & Alerts
 
 Includes responsive flight search, sample result filtering/sorting, itinerary/fare views, passenger demo form, interactive seat selector, baggage/add-ons, review and payment preview, confirmation, change/cancellation and status screens. Airlines, flight numbers, schedules, seat inventory and fares are fictional; no live airline API, ticket issuance, payment gateway or status feed is connected.
+
+
+## Prototype 92 — Train Booking & Railway Journey Management
+Implemented 16 separate frontend routes:
+- `trains-dashboard.html` — Train Booking Dashboard
+- `trains-search.html` — Search Trains
+- `trains-results.html` — Train Search Results
+- `trains-filters.html` — Train Filters & Sorting
+- `trains-details.html` — Train Route & Stops
+- `trains-classes.html` — Train Classes & Fare Options
+- `trains-availability.html` — Seat Availability Preview
+- `trains-passengers.html` — Passenger Details
+- `trains-berth-preferences.html` — Berth & Seat Preferences
+- `trains-meals.html` — Meals & Onboard Services
+- `trains-review.html` — Review Train Journey
+- `trains-payment.html` — Train Payment Preview
+- `trains-confirmation.html` — Train Booking Confirmation
+- `trains-manage-booking.html` — Manage Train Booking
+- `trains-cancel-refund.html` — Train Cancellation & Refund
+- `trains-live-status.html` — Train Status & Journey Alerts
+
+Includes responsive rail search, sample train cards, route/stops table, class comparison, mock availability, passenger/berth preferences, meals, fare review, payment preview, confirmation, cancellation/refund and status screens. All rail services, schedules, availability and fares are fictional; no live railway inventory, ticket issuance, payment or real-time status is connected.
