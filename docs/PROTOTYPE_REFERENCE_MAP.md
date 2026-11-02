@@ -52,3 +52,8 @@ Track two separate measures:
 - **Reference catalogue:** how many of the 100 boards have been inspected and mapped.
 - **Implementation coverage:** how many screens/states from inspected boards have been implemented and verified.
 Do not use one percentage to imply the other. A prototype board may contain multiple screens, and a page count alone is not a reliable measure of prototype coverage.
+
+
+## Prototype 97 — Hotel Booking & Property Details
+
+This module adds 16 dedicated frontend routes for hotel search, property details, room selection, guest occupancy, policies, reservation review, payment preview, fictional confirmation, management, cancellation preview and voucher preview. Use the existing TRIPNEST reference PDF as the visual direction; browser comparison is still required.
