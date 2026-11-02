@@ -469,3 +469,25 @@ Implemented 16 separate frontend routes:
 - `transfers-receipt.html` — Transfer Receipt & Invoice Preview
 
 Includes airport transfer search, vehicle comparisons, filters, vehicle/chauffeur details, pickup and flight instructions, passenger/luggage preferences, optional extras, fare review, demo checkout, confirmation, management, cancellation, status and receipt preview. All vehicle/driver data, fares and reservation references are fictional; no live dispatch, GPS tracking, booking, payment, refund or provider integration is connected.
+
+
+## Prototype 97 — Hotel Booking & Property Details
+
+- `hotels-dashboard.html` — Hotel Booking Dashboard
+- `hotels-search.html` — Search Hotels & Stays
+- `hotels-results.html` — Hotel Search Results
+- `hotels-filters.html` — Hotel Filters & Sorting
+- `hotels-property-details.html` — Property Details & Photos
+- `hotels-rooms.html` — Room Selection
+- `hotels-guest-occupancy.html` — Guest & Room Occupancy
+- `hotels-amenities.html` — Amenities & Facilities
+- `hotels-policies.html` — Check-in, House Rules & Policies
+- `hotels-guest-details.html` — Guest Details
+- `hotels-review.html` — Review Hotel Reservation
+- `hotels-payment-preview.html` — Hotel Payment Preview
+- `hotels-confirmation.html` — Hotel Reservation Confirmation
+- `hotels-manage.html` — Manage Hotel Reservation
+- `hotels-change-cancel.html` — Modify or Cancel Reservation
+- `hotels-voucher.html` — Hotel Voucher & Receipt
+
+Frontend-only demo with fictional properties, rates and availability. No live hotel booking or payment integration is connected.
