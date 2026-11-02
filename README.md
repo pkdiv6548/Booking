@@ -62,6 +62,26 @@ Open `index.html` in a browser, or enable GitHub Pages in repository settings an
   - `cars-rental-cancel-refund.html` — Cancellation & Refund
   - `cars-rental-return.html` — Return Checklist & Rental Status
 
+### Experiences & activities
+- Prototype 96 — Experiences, Activities, Attractions & Tour Reservations (16 dedicated routes):
+  - `experiences-dashboard.html` — Experiences & Activities Dashboard
+  - `experiences-search.html` — Search Experiences
+  - `experiences-results.html` — Experience Search Results
+  - `experiences-filters.html` — Experience Filters & Sorting
+  - `experiences-details.html` — Experience Details & Highlights
+  - `experiences-schedule.html` — Date & Time Slot Selection
+  - `experiences-guests.html` — Guest Selection
+  - `experiences-availability.html` — Availability Preview
+  - `experiences-addons.html` — Add-ons & Preferences
+  - `experiences-review.html` — Review Experience Booking
+  - `experiences-payment.html` — Payment Preview
+  - `experiences-confirmation.html` — Experience Booking Confirmation
+  - `experiences-manage.html` — Manage Experience Booking
+  - `experiences-change.html` — Modify Experience Booking
+  - `experiences-cancel-refund.html` — Cancellation & Refund Preview
+  - `experiences-ticket.html` — Experience Ticket & Voucher
+- All screens use fictional activity data. Search, availability, payment, confirmation, modification, cancellation and ticket validation are frontend-only previews.
+
 ### Other travel and account pages
 - `experiences.html`, `airport-transfers.html`, `offers.html`
 - `login.html`, `register.html`, `profile.html`
