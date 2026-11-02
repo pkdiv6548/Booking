@@ -1,3 +1,26 @@
+### Prototype 97 — Hotel Booking & Property Details
+- Screens created: **16 / 16 (100% route creation complete)**.
+- Files created and fetched for existence checks: pending final verification.
+- Browser-based visual regression and end-to-end tests: **not yet completed**.
+- Frontend-only demo; no live inventory, hotel booking, payment, cancellation or refund integration.
+
+1. `hotels-dashboard.html` — Hotel Booking Dashboard
+2. `hotels-search.html` — Search Hotels & Stays
+3. `hotels-results.html` — Hotel Search Results
+4. `hotels-filters.html` — Hotel Filters & Sorting
+5. `hotels-property-details.html` — Property Details & Photos
+6. `hotels-rooms.html` — Room Selection
+7. `hotels-guest-occupancy.html` — Guest & Room Occupancy
+8. `hotels-amenities.html` — Amenities & Facilities
+9. `hotels-policies.html` — Check-in, House Rules & Policies
+10. `hotels-guest-details.html` — Guest Details
+11. `hotels-review.html` — Review Hotel Reservation
+12. `hotels-payment-preview.html` — Hotel Payment Preview
+13. `hotels-confirmation.html` — Hotel Reservation Confirmation
+14. `hotels-manage.html` — Manage Hotel Reservation
+15. `hotels-change-cancel.html` — Modify or Cancel Reservation
+16. `hotels-voucher.html` — Hotel Voucher & Receipt
+
 # TRIPNEST implementation progress
 
 Updated: 2 November 2026
