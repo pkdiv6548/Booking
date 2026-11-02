@@ -90,3 +90,12 @@ document.querySelectorAll('[data-localization-form]').forEach(function(form){
     status.textContent='Localization draft saved in this browser. No server was contacted.';
   });
 });
+
+/* Prototype 79: local-only demo interactions; no external channel credentials or APIs. */
+document.querySelectorAll('[data-channel-form]').forEach(function(form){
+ const key='tripnest-channel-'+form.dataset.channelForm;let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+ Object.entries(saved).forEach(function(entry){const el=form.elements.namedItem(entry[0]);if(!el)return;if(el.type==='checkbox')el.checked=Boolean(entry[1]);else el.value=entry[1]});
+ form.addEventListener('submit',function(e){e.preventDefault();const data={};new FormData(form).forEach((v,k)=>{data[k]=String(v)});form.querySelectorAll('input[type=checkbox]').forEach(el=>data[el.name]=el.checked);localStorage.setItem(key,JSON.stringify(data));let status=form.querySelector('.cm-status');if(status)status.textContent='Saved in this browser for demo purposes. No channel provider was contacted.';if(form.dataset.channelForm==='setup'){localStorage.setItem('tripnest-channel-connected-bookingcom','true');status.textContent='Demo connection saved. Continue to room mapping and rate synchronization.'} });
+});
+document.querySelectorAll('[data-connect-channel]').forEach(function(button){button.addEventListener('click',function(){const channel=button.dataset.connectChannel;localStorage.setItem('tripnest-channel-connected-'+channel.toLowerCase().replace(/[^a-z0-9]+/g,'-'),'true');button.textContent='Selected (demo)';button.disabled=true;const note=document.createElement('p');note.className='notice success';note.setAttribute('role','status');note.textContent=channel+' selected for demo setup. No external connection was made.';button.closest('.card').append(note);if(channel==='Booking.com')setTimeout(function(){location.href='channel-bookingcom-setup.html'},250)})});
+document.querySelectorAll('[data-resolve-conflict]').forEach(function(button){button.addEventListener('click',function(){const key='tripnest-channel-conflicts-resolved';const arr=JSON.parse(localStorage.getItem(key)||'[]');const id=Number(button.dataset.resolveConflict);if(!arr.includes(id))arr.push(id);localStorage.setItem(key,JSON.stringify(arr));button.textContent='Resolved (demo)';button.disabled=true;const status=document.createElement('p');status.className='notice success';status.textContent='Conflict marked resolved locally. No OTA inventory or pricing was changed.';button.after(status)})});
