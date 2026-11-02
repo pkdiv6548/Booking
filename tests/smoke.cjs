@@ -107,6 +107,22 @@ const pages = [
   "identity-resubmission.html",
   "account-security-settings.html",
   "identity-verification-success.html",
+  "support-requests.html",
+  "support-ticket-create.html",
+  "support-select-booking.html",
+  "support-issue-category.html",
+  "support-describe-problem.html",
+  "support-attach-documents.html",
+  "support-ticket-review.html",
+  "support-ticket-submitted.html",
+  "support-ticket-status.html",
+  "refund-request-form.html",
+  "refund-eligibility.html",
+  "refund-status-tracking.html",
+  "dispute-evidence.html",
+  "dispute-review-status.html",
+  "resolution-offer.html",
+  "resolution-accepted.html",
   "admin.html", "admin-users.html", "admin-roles.html", "admin-role-editor.html",
   "admin-user-editor.html", "admin-access-control.html", "admin-login-history.html",
   "admin-audit-logs.html", "admin-security-alerts.html", "admin-alert-details.html",
@@ -481,6 +497,22 @@ const pages = [
       await page.locator('[data-id82-review="Approved (demo)"]').click();
       if (!(await page.locator(".id82-status").innerText()).includes("No real identity record")) failures.push("Prototype 82: identity review demo status missing");
     } catch (error) { failures.push("Prototype 82 interaction check: " + error.message); }
+
+
+    // Prototype 83: end-to-end support ticket demo workflow.
+    try {
+      await page.goto("http://127.0.0.1:4173/support-ticket-create.html", { waitUntil: "domcontentloaded" });
+      await page.locator('form[data-support83-form="support-ticket-create"] button[type="submit"]').click();
+      await page.locator('[data-support83-choice="BK-7845623"]').click();
+      await page.locator('[data-support83-choice="Cancellation & Refund"]').click();
+      await page.locator("#problemDetails").fill("Sample issue description for automated smoke test.");
+      await page.locator('form[data-support83-form="support-describe-problem"] button[type="submit"]').click();
+      await page.locator("#attachmentName").fill("smoke-test-receipt.pdf");
+      await page.locator('form[data-support83-form="support-attach-documents"] button[type="submit"]').click();
+      await page.locator("[data-support83-submit]").click();
+      await page.waitForURL("**/support-ticket-submitted.html");
+      if (!(await page.locator("[data-support83-ticket-id]").innerText()).startsWith("#TKT-")) failures.push("Prototype 83: ticket confirmation ID missing");
+    } catch (error) { failures.push("Prototype 83 support flow: " + error.message); }
 
     if (failures.length) {
       console.error("TRIPNEST browser smoke test FAILED:");
