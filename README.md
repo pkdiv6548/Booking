@@ -297,3 +297,25 @@ Implemented 16 frontend routes based on the labelled Prototype 088/100 reference
 - `packages-booking-confirmation.html` — Package Booking Confirmation
 
 Includes responsive TRIPNEST navigation, package cards, category/destination exploration, itinerary, customisation, accommodation/transport selection, comparison, price breakdown and demo checkout/confirmation. Package rates and suppliers are fictional; no live availability, reservation or payment is connected.
+
+
+## Prototype 89 — Destination Discovery, Travel Guides & Local Experiences
+Implemented 16 separate frontend routes based on the labelled Prototype 089/100 board:
+- `destination-discovery.html` — Destination Discovery Dashboard
+- `destination-explore.html` — Explore Destinations
+- `destination-search-filters.html` — Destination Search & Filters
+- `destination-details.html` — Destination Details
+- `destination-best-time.html` — Best Time to Visit
+- `destination-weather.html` — Weather & Seasonal Guide
+- `destination-local-experiences.html` — Local Experiences Explorer
+- `destination-map.html` — Interactive Points of Interest (illustrative map)
+- `destination-local-guides.html` — Local Experiences Directory
+- `destination-food.html` — Food & Restaurant Guide
+- `destination-transport.html` — Local Transport Guide
+- `destination-budget.html` — Travel Budget Estimator
+- `destination-safety.html` — Destination Safety Information
+- `destination-travel-tips.html` — Travel Tips & Local Etiquette
+- `destination-saved.html` — Saved Destinations & Wishlist
+- `destination-recommendations.html` — Personalised Destination Recommendations
+
+Includes responsive destination navigation, destination and activity cards, seasonal planning, sample guide and food directories, an illustrative points-of-interest map, safety checklist and a local budget estimate. It does not connect to live weather, GPS/maps, verified providers or real-time availability. Destination listings and prices are illustrative.
