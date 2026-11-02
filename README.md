@@ -209,3 +209,25 @@ Added 16 separate screens: `customer-profile.html`, `profile-edit.html`, `email-
 
 ## Prototype 83 — Customer Support Tickets, Refund Requests & Dispute Resolution
 Added 16 separate screens: `support-requests.html`, `support-ticket-create.html`, `support-select-booking.html`, `support-issue-category.html`, `support-describe-problem.html`, `support-attach-documents.html`, `support-ticket-review.html`, `support-ticket-submitted.html`, `support-ticket-status.html`, `refund-request-form.html`, `refund-eligibility.html`, `refund-status-tracking.html`, `dispute-evidence.html`, `dispute-review-status.html`, `resolution-offer.html`, `resolution-accepted.html`. The module follows the visible Prototype 83/100 montage. Support ticket creation, refund eligibility, dispute evidence, resolution decisions and tracking use fabricated data and browser-local storage only. No real booking is cancelled, no refund is processed, and no actual file is uploaded.
+
+
+## Prototype 85 — Travel Insurance, Protection Plans & Claims
+Implemented a 16-route frontend-only flow based on the uploaded 100-prototype reference PDF and the available `TRIPNEST Travel Insurance Dashboard Montage.png` board:
+- `insurance.html` — Travel Protection Dashboard
+- `insurance-plans.html` — Plan comparison
+- `insurance-select-plan.html` — Selected plan
+- `insurance-traveller.html` — Traveller information
+- `insurance-trip-details.html` — Trip details
+- `insurance-coverage.html` — Coverage overview
+- `insurance-medical-options.html` — Medical coverage options
+- `insurance-review.html` — Review
+- `insurance-addons.html` — Optional protection add-ons
+- `insurance-price-breakdown.html` — Illustrative premium breakdown
+- `insurance-checkout.html` — Demo checkout
+- `insurance-confirmation.html` — Sample purchase confirmation
+- `insurance-documents.html` — Digital policy document catalogue
+- `insurance-file-claim.html` — Demo claim form
+- `insurance-claim-status.html` — Claim status tracking
+- `insurance-claim-decision.html` — Sample claim decision
+
+All policy values, premiums, claim details and statuses are fictional UI examples. This module does not sell insurance, create a real policy, process payments, transmit uploaded files, submit a claim, or initiate a settlement. No real payment details should be entered.
